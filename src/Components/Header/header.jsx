@@ -67,8 +67,8 @@ export default function Header() {
             About Us
           </Link>
 
-          <Link
-            to={"/retail"}
+          <a
+            href="#"
             className="flex items-center gap-2 text-md md:text-lg font-medium hover:text-black transition-colors"
           >
             <span>Contact Us</span>
@@ -101,7 +101,7 @@ export default function Header() {
                 strokeLinejoin="round"
               />
             </svg>
-          </Link>
+          </a>
         </nav>
       </div>
 
@@ -117,9 +117,9 @@ export default function Header() {
           <div className="mx-auto md:pl-24 pl-6 pr-6 py-10 max-w-full">
             <div className="max-w-screen-md">
               <ul className="space-y-6">
-                <li className="text-lg md:text-xl font-medium text-gray-900">
+                <Link to={"/retail"} className="text-lg md:text-xl font-medium text-gray-900">
                   Retail Media Network
-                </li>
+                </Link>
                 <li className="text-lg md:text-xl font-medium text-gray-900">
                   FMCG / Pixla Consumer Products
                 </li>

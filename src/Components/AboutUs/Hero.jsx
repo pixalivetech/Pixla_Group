@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import HeroImg from "./../../assets/AboutUs/A1.webp"; // <-- put your image here (src/assets/hero.jpg)
+import HeroImg from "./../../assets/AboutUs/A1.webp";
+import { ArrowUpRight } from "lucide-react"; // <-- put your image here (src/assets/hero.jpg)
 
 /**
  * Animated counter hook
@@ -63,7 +64,7 @@ export default function HeroSection() {
     <section ref={sectionRef} className="bg-gray-100 px-6 md:px-12 lg:px-24 py-12">
       {/* Large heading */}
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-gray-900 leading-tight">
+        <h1 className="text-4xl md:text-3xl lg:text-4xl  font-semibold text-gray-900 leading-tight">
           ONE GROUP. MANY DIVISIONS. ENDLESS OPPORTUNITIES.
         </h1>
 
