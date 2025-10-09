@@ -60,12 +60,12 @@ export default function Header() {
             </button>
           </div>
 
-          <a
-            href="#"
+          <Link
+            to="/about"
             className="text-md md:text-lg font-medium hover:text-black transition-colors"
           >
             About Us
-          </a>
+          </Link>
 
           <a
             href="#"

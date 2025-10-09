@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'r
 import Header from './Components/Header/header';
 import Footer from "./Components/Footer/footer";
 import Hero from "./Components/Home/hero";
+import AboutUs from "./Pages/AboutUs";
 
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
     <Router>
       <Header />
       <Hero/>
+      <Route path = "/about" element = {<AboutUs/>} />
+      
       <Footer/>
     </Router>
   );
