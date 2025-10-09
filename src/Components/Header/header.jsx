@@ -61,14 +61,14 @@ export default function Header() {
           </div>
 
           <Link
-            to="/about"
+            to={"/about"}
             className="text-md md:text-lg font-medium hover:text-black transition-colors"
           >
             About Us
           </Link>
 
-          <a
-            href="#"
+          <Link
+            to={"/retail"}
             className="flex items-center gap-2 text-md md:text-lg font-medium hover:text-black transition-colors"
           >
             <span>Contact Us</span>
@@ -101,7 +101,7 @@ export default function Header() {
                 strokeLinejoin="round"
               />
             </svg>
-          </a>
+          </Link>
         </nav>
       </div>
 
