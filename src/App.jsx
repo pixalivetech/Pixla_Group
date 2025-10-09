@@ -1,13 +1,19 @@
-import React from 'react'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import Header from './Components/Header/header';
+import Footer from "./Components/Footer/footer";
+import Hero from "./Components/Home/hero";
 
-const App = () => {
+
+function App() {
   return (
-    <div>
-       <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-    </div>
-  )
+    <Router>
+      <Header />
+      <Hero/>
+      <Footer/>
+    </Router>
+  );
 }
+
 
 export default App
