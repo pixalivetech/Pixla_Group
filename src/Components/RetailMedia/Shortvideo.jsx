@@ -13,7 +13,7 @@ const PixlaSection = () => {
         </h2>
 
         {/* Main Grid */}
-        <div className="grid-2 md:grid-cols-3 gap-10 items-center">
+        <div className="grid md:grid-cols-2 justify-start">
           {/* Left Side - Phone Image */}
           <div className="flex justify-center">
             <img
