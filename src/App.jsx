@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'r
 import Header from './Components/Header/header';
 import Footer from "./Components/Footer/footer";
 import Hero from "./Components/Home/hero";
+import About from "./Components/Home/about";
+import Division from "./Components/Home/division";
 
 
 function App() {
@@ -10,6 +12,8 @@ function App() {
     <Router>
       <Header />
       <Hero/>
+      <About/>
+      <Division/>
       <Footer/>
     </Router>
   );

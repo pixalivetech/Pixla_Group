@@ -105,7 +105,7 @@ export default function Footer() {
       {/* Large Background Text */}
       <div className="bg-[#f2f2f2]">
      <div className="w-full  flex justify-center items-center">
-        <h1 className=" text-6xl md:text-8xl lg:text-[200px] font-extrabold text-black leading-snug">
+        <h1 className=" text-6xl md:text-8xl lg:text-[192px] font-extrabold text-black leading-snug">
           PIXLAGROUP
         </h1>
       </div>
