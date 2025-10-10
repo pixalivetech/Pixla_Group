@@ -15,15 +15,20 @@ function App() {
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Hero />} />
+        <Route path="/" element={
+          <>
+            <Hero />
+            <About />
+            <Division />
+          </>
+        }
+        />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/retail" element={<Retail />} />
       </Routes>
-      <Hero/>
-      <About/>
-      <Division/>
-      <Footer/>
+      <Footer />
     </Router>
+    
   );
 }
 
