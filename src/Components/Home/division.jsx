@@ -1,12 +1,12 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaArrowUpRightFromSquare } from "react-icons/fa6";
 import Div1 from "./../../assets/Home/div1.png";
 import Div2 from "./../../assets/Home/div2.png";
 import Div3 from "./../../assets/Home/div3.png";
 
 export default function OurDivisions() {
-  // Setting activeIndex to 0 to match the screenshot where the first division is open.
-  const [activeIndex, setActiveIndex] = useState(0); 
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const divisions = [
     {
@@ -31,13 +31,13 @@ export default function OurDivisions() {
         { name: "PixTaste", desc: "Food & Beverage" },
         { name: "PixGlow", desc: "Personal Care" },
         { name: "PixHome", desc: "Home Essentials" },
-        { name: "PixKart", desc: "Ecommers" },
+        { name: "PixKart", desc: "Ecommerce" },
       ],
       img: Div2,
     },
     {
       id: "03",
-      title: "IT Services – Technology solutions, training, and freelancing",
+      title: "IT Services – Technology solutions",
       description:
         "Providing cutting-edge IT services, tech upskilling programs, and freelancing opportunities for professionals to grow and innovate globally.",
       tags: [
@@ -50,37 +50,37 @@ export default function OurDivisions() {
     },
   ];
 
-  const handleToggle = (index) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
-
   return (
-    <section className="bg-white px-6 md:px-20 py-16 font-sans">
-      {/* Header (unchanged) */}
-      <div className="flex justify-between items-start pb-4 border-b border-gray-200">
-        <div>
-          <p className="text-gray-500 font-medium mb-1">Our Divisions</p>
-          <h2 className="text-[22px] md:text-[26px] font-medium max-w-2xl text-gray-800 leading-snug">
-            Our divisions deliver specialized solutions to drive innovation,
-            engagement, and growth
-          </h2>
-        </div>
-        <FaArrowUpRightFromSquare className="w-6 h-6 text-gray-700 mt-2" />
-      </div>
-
-      {/* Layout (unchanged) */}
-      <div className="mt-8 grid md:grid-cols-[300px_1fr] gap-10">
-        {/* Left Side Images (unchanged) */}
+    <section className="bg-[#f2f2f2] px-6 md:px-24 py-16 md:py-24 font-sans">
+      {/* Header */}
+    <div className="flex flex-col md:flex-row justify-center md:justify-end items-center md:items-end pb-8 border-b-2 border-gray-200 md:ml-85 text-center md:text-left gap-2">
+  <div>
+    <p className="inline-block text-sm md:text-lg border-b-2 border-gray-200 text-gray-500 font-medium mb-1 cursor-pointer">
+      Our Divisions
+    </p>
+    <h2 className="text-[22px] md:text-[26px] font-semibold text-gray-800 leading-snug">
+      Our divisions deliver specialized solutions to drive innovation,
+      engagement, and growth
+    </h2>
+  </div>
+  <FaArrowUpRightFromSquare className="w-6 h-6 text-gray-700 mt-2 md:mt-0" />
+</div>
+      {/* ===== Desktop View ===== */}
+      <div
+        className="hidden md:grid mt-0 grid-cols-[300px_1fr] gap-10"
+        onMouseLeave={() => setActiveIndex(null)}
+      >
+        {/* Left Images */}
         <div className="flex flex-col gap-6">
           {divisions.map((item, idx) => (
-            <div key={idx} className="overflow-hidden rounded-md">
+            <div key={idx} className="overflow-hidden">
               <img
                 src={item.img}
                 alt={item.title}
-                onClick={() => handleToggle(idx)}
-                className={`rounded-md w-full object-cover transition-all duration-700 cursor-pointer ${
+                onMouseEnter={() => setActiveIndex(idx)}
+                className={`w-full object-cover transition-all duration-700 cursor-pointer ${
                   activeIndex === idx
-                    ? "h-84 opacity-100"
+                    ? "h-76 opacity-100"
                     : "h-42 opacity-80 grayscale-[30%]"
                 }`}
               />
@@ -93,33 +93,29 @@ export default function OurDivisions() {
           {divisions.map((item, idx) => (
             <div
               key={idx}
-              onClick={() => handleToggle(idx)}
-              className="border-b border-gray-200 py-10 cursor-pointer transition-all duration-500"
+              onMouseEnter={() => setActiveIndex(idx)}
+              className="border-b-2 border-gray-200 py-8 cursor-pointer transition-all duration-500"
             >
-              
-              {/* Grid: 
-                  **MODIFIED: Set ID column width to 200px** to ensure Tags text is fully visible. 
-                  Increased gap to 12 (3rem) for better visual separation.
-              */}
               <div className="grid grid-cols-[200px_1fr] items-start gap-12">
-                
-                {/* 1st Column: ID and Tags */}
+                {/* ID + Tags */}
                 <div className="flex flex-col items-start pt-3">
-                  <p className="text-4xl md:text-5xl font-light text-gray-400">
-                    {item.id}.
-                  </p>
-                  <br /><br />
-                  {/* Tags section, fully visible when active */}
+                  <p className="text-3xl md:text-4xl font-medium ">{item.id}.</p>
+                  <br />
+                  <br />
+                  <br />
                   <div
                     className={`w-full overflow-hidden transition-all duration-700 ease-in-out ${
                       activeIndex === idx
-                        ? "max-h-[500px] opacity-100 mt-10" // mt-10 spaces tags below the ID
+                        ? "max-h-[500px] opacity-100 mt-10"
                         : "max-h-0 opacity-0"
                     }`}
                   >
                     <div className="space-y-1">
                       {item.tags.map((tag, i) => (
-                        <p key={i} className="text-sm text-gray-600 leading-snug whitespace-nowrap">
+                        <p
+                          key={i}
+                          className="text-sm text-gray-600 leading-snug whitespace-nowrap"
+                        >
                           <span className="font-semibold text-gray-900">
                             {tag.name}
                           </span>{" "}
@@ -130,39 +126,113 @@ export default function OurDivisions() {
                   </div>
                 </div>
 
-                {/* 2nd Column: Title, Description, and Button */}
-                <div className="flex flex-col items-start w-full"> 
-                  
-                  {/* Title */}
-                  <h3 className="text-lg md:text-xl font-semibold text-gray-900 mt-8 text-left ">
+                {/* Title + Desc + Button */}
+                <div className="flex flex-col items-start w-full">
+                  <h3 className="text-lg md:text-2xl font-semibold text-gray-900 mt-8 text-left ">
                     {item.title}
                   </h3>
 
-                  {/* Expandable section (description + button) */}
                   <div
                     className={`w-full overflow-hidden transition-all duration-700 ease-in-out ${
-                      activeIndex === idx ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                      activeIndex === idx
+                        ? "max-h-[500px] opacity-100"
+                        : "max-h-0 opacity-0"
                     }`}
                   >
-                    {/* Description: Right-aligned for visual balance */}
                     <p className="text-gray-600 mt-4 leading-relaxed max-w-lg text-left ml-auto">
                       {item.description}
                     </p>
-                    
-                    {/* Button: Aligned to the far right, below the description */}
-                    <div className="flex justify-end mt-14">
-                       <button className="bg-black text-white text-sm px-6 py-2 w-fit flex items-center gap-3 hover:bg-gray-800 transition-all">
+
+                    <div className="flex justify-end mt-12">
+                      <button className="bg-black text-white text-sm px-6 py-2 w-fit flex items-center gap-3 hover:bg-gray-800 transition-all">
                         Explore
                         <FaArrowUpRightFromSquare className="w-4 h-4" />
                       </button>
                     </div>
-
                   </div>
                 </div>
               </div>
             </div>
           ))}
         </div>
+      </div>
+
+      {/* ===== Mobile View ===== */}
+      <div className="md:hidden flex flex-col gap-8 mt-10">
+        {divisions.map((item, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: idx * 0.15 }}
+            className="bg-white  shadow-md overflow-hidden border border-gray-100"
+          >
+            <motion.img
+              src={item.img}
+              alt={item.title}
+              className="w-full h-52 object-cover"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.4 }}
+            />
+
+            <div className="p-5">
+              <div
+                onClick={() =>
+                  setActiveIndex(activeIndex === idx ? null : idx)
+                }
+                className="flex justify-between items-center cursor-pointer"
+              >
+                <h3 className="text-lg font-semibold text-gray-800">{item.title}</h3>
+                <motion.span
+                  animate={{
+                    rotate: activeIndex === idx ? 45 : 0,
+                  }}
+                  className="text-gray-500 text-lg font-bold"
+                >
+                  +
+                </motion.span>
+              </div>
+
+              <p className="text-gray-600 text-sm mt-3 leading-relaxed">
+                {item.description.slice(0, 90)}...
+              </p>
+
+              <AnimatePresence>
+                {activeIndex === idx && (
+                  <motion.div
+                    key="content"
+                    initial={{ opacity: 0, scale: 0.98, y: -10 }}
+                    animate={{ opacity: 1, scale: 1, y: 0 }}
+                    exit={{ opacity: 0, scale: 0.95, y: -10 }}
+                    transition={{ duration: 0.4 }}
+                    className="mt-4"
+                  >
+                    <div className="space-y-1">
+                      {item.tags.map((tag, i) => (
+                        <p
+                          key={i}
+                          className="text-sm text-gray-600 leading-snug whitespace-nowrap"
+                        >
+                          <span className="font-semibold text-gray-900">{tag.name}</span>{" "}
+                          <span className="text-gray-500">({tag.desc})</span>
+                        </p>
+                      ))}
+                    </div>
+
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="mt-5 bg-black text-white text-sm px-6 py-2 w-full flex items-center justify-center gap-2  hover:bg-gray-800 transition-all"
+                    >
+                      Explore
+                      <FaArrowUpRightFromSquare className="w-4 h-4" />
+                    </motion.button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

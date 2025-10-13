@@ -14,6 +14,12 @@ import Pixalive from "./Pages/Pixalive";
 import Pixlakart from "./Pages/Pixlakart";
 import PixlaAcademy from "./Pages/Pixlaacademy";
 import Pixclick from "./Pages/Pixclick";
+import Contact from './Components/Contact/Contact'
+import FmcgPage from './Pages/FmcgPage';
+import Itservice from "./Pages/Itservice"
+import Home from "./Pages/Home";
+
+
 
 function App() {
   return (
@@ -40,12 +46,28 @@ function App() {
         <Route path="/pixlakart" element={<Pixlakart />} />
         <Route path="/pixlaacademy" element={<PixlaAcademy />} />
         <Route path="/pixclick" element={<Pixclick />} />
+      <Routes>
+
+        <Route path="/" element={<Home />} />
+
+        <Route path="/about" element={<AboutUs />} />
+        <Route path="/retail" element={<Retail />} />
+
+
+
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/fmcg" element={<FmcgPage />} />
+        <Route path="/It services" element={<Itservice />} />
       </Routes>
 
       {/* Common Footer */}
       <Footer />
+
+
     </Router>
-  );
+  )
+
+
 }
 
 export default App;
