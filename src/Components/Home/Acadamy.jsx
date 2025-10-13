@@ -28,20 +28,21 @@ export default function KeyInitiatives() {
 
   return (
     <section className="bg-[#f2f2f2] py-16 px-6 md:px-24 md:py-24 font-sans">
-      {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap- mb-12">
+      {/* Header - MODIFIED for Mobile Center */}
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap- mb-12 items-center text-center">
         <h4 className="text-gray-500 text-sm md:text-lg inline-block border-b-2 border-gray-200 font-medium mb-1 cursor-pointer">
           Our Academy Program
         </h4>
-        <p className="text-black font-semibold text-lg md:text-2xl max-w-2xl text-left md:text-left mr-56">
-         Innovative Programs Designed For Future
+        <p className="text-black font-semibold text-lg md:text-2xl max-w-2xl text-center md:text-left md:mr-56">
+          Innovative Programs Designed For Future
         </p>
       </div>
 
       {/* Content Section */}
       <div className="flex flex-col md:flex-row gap-15">
-        {/* Left Image */}
-        <div className="md:w-1/3">
+        
+        {/* Left Image - MODIFIED for Mobile Center */}
+        <div className="md:w-1/3 flex justify-center md:justify-start mb-8 md:mb-0">
           <img
             src={DivisionImage}
             alt="Division"

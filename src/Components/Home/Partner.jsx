@@ -17,9 +17,12 @@ export default function InvestorsAndPartners() {
           {/* Left: Image with soft gray background */}
           <div className="lg:w-1/2 flex justify-center lg:justify-start">
             {/* Soft gray background container */}
-            <div className="relative bg-gray-200  flex justify-center items-start h-[330px] w-[320px]">
+            {/* Added lg:overflow-visible to allow the image to spill out on desktop only */}
+            {/* The default is overflow-hidden for mobile to contain the image */ }
+            <div className="relative bg-gray-200 flex justify-center items-center lg:items-start h-[330px] w-[320px] overflow-hidden lg:overflow-visible">
               {/* Image inside separate div */}
-              <div className="mt-20 -mr-40">
+              {/* The aggressive positioning is restored here, but the container's overflow handles mobile */}
+              <div className="lg:mt-20 lg:-mr-40 mt-10"> 
                 <img
                   src={handshakeImage}
                   alt="Partners shaking hands"
@@ -44,15 +47,15 @@ export default function InvestorsAndPartners() {
 
             <ul className="space-y-4 text-lg max-w-md text-black">
               <li className="flex items-start gap-3">
-                <span className="flex-none  text-2xl font-extrabold">•</span>
+                <span className="flex-none text-2xl font-extrabold">•</span>
                 <span className="font-semibold" >Retail Media Network</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex-none  text-2xl font-extrabold">•</span>
+                <span className="flex-none text-2xl font-extrabold">•</span>
                 <span className="font-semibold">FMCG / Pixla Consumer Products</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="flex-none  text-2xl font-extrabold">•</span>
+                <span className="flex-none text-2xl font-extrabold">•</span>
                 <span className="font-semibold">IT Services – Technology solutions</span>
               </li>
             </ul>

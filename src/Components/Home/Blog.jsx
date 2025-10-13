@@ -42,7 +42,7 @@ export default function BlogsInsights() {
         {/* top row: left label + center intro */}
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-42 mb-12">
           <div className="md:w-1/4">
-            <p className="inline-block text-sm md:text-lg border-b-2 border-gray-200 text-gray-500 font-medium mb-1 cursor-pointer">Blogs &amp; Insights</p>
+            <p className="inline-block border-b-2 border-gray-200 text-gray-500 font-medium  cursor-pointer">Blogs &amp; Insights</p>
           </div>
 
           <div className="md:w-3/4">
