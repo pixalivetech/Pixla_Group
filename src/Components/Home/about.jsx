@@ -7,7 +7,7 @@ import RightImg from "./../../assets/Home/hero1.png";
 
 export default function WhoWeAreSection() {
   return (
-    <section className="bg-[#f2f2f2] py-16 md:py-32 font-sans">
+    <section className="bg-[#f2f2f2] py-16 md:py-24 font-sans">
       <div className=" mx-auto px-6 md:px-24">
         {/* layout: left | center | right */}
         <div className="flex items-start justify-between gap-6 md:gap-12">

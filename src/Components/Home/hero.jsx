@@ -9,7 +9,7 @@ import Hero1 from "./../../assets/Home/hero1.png"
 const DivisionsSection = () => {
   return (
     // Main container with a light gray background (bg-gray-50 or bg-gray-100)
-    <div className="bg-[#f2f2f2] py-16  font-sans">
+    <div className="bg-[#f2f2f2] py-16 md:py-32 font-sans">
       <div className=" mx-auto px-6 md:px-24 text-center">
         
         {/* --- Top Text and Headings --- */}
