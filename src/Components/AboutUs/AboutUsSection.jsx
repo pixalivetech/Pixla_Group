@@ -8,8 +8,8 @@ import missionLogo from "./../../assets/AboutUs/Frame4.png";
 
 const AboutUsSection = () => {
   return (
-    <section className="bg-black text-white w-full min-h-screen flex flex-col items-center px-6 md:px-12 lg:px-20 py-20 font-Open Sans">
-      <div className="w-full max-w-[1280px] flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+    <section className="bg-black text-white  px-6 md:px-24  py-16 font-Open Sans">
+      <div className=" flex flex-col md:flex-row md:items-start md:justify-between gap-10">
         {/* LEFT SIDE – "About Us – Pixla Group" */}
         <div className="w-full md:w-1/3 flex md:justify-start">
           <p className="text-gray-400 text-lg md:text-xl underline underline-offset-4 decoration-gray-500 whitespace-nowrap">
@@ -18,7 +18,7 @@ const AboutUsSection = () => {
         </div>
 
         {/* RIGHT SIDE – Four Grid Cards */}
-        <div className="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-12">
+        <div className=" grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-12">
           {/* Card 1 */}
           <div className="flex flex-col gap-5">
             <img

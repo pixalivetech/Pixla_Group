@@ -63,7 +63,7 @@ export default function HeroSection() {
   return (
     <section ref={sectionRef} className="bg-gray-100 px-6 md:px-12 lg:px-24 py-12 font-Open Sans">
       {/* Large heading */}
-      <div className="max-w-7xl mx-auto">
+      <div className="font-open-sans">
         <h1 className="text-4xl md:text-3xl lg:text-4xl  font-semibold text-gray-900 leading-tight">
           ONE GROUP. MANY DIVISIONS. ENDLESS OPPORTUNITIES.
         </h1>

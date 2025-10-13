@@ -67,7 +67,7 @@ const AnnouncementCard = ({ category, title, description, imageSrc, author, like
         <img
           src={imageSrc}
           alt={title}
-          className="w-full h-full object-cover rounded-sm md:w-[213px] md:h-[146px]"
+          className="w-full h-full object-cover rounded-sm "
         />
       </div>
     </div>
@@ -77,7 +77,7 @@ const AnnouncementCard = ({ category, title, description, imageSrc, author, like
 // --- MEDIA ANNOUNCEMENTS MAIN SECTION ---
 const MediaAnnouncements = () => {
   return (
-    <div className="max-w-7xl mx-auto p-4 sm:p-8 bg-white font-sans mt-20">
+    <div className=" px-6 md:px-24  py-16 bg-white font-sans mt-20">
       
       {/* --- MODIFIED HEADER SECTION ---
         Using flex and justify-between to place the title left and the text right.

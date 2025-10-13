@@ -22,9 +22,9 @@ const App = () => {
 
   return (
     // Outer container matching the subtle off-white background of the screenshot
-    <div className="min-h-screen bg-gray-50 font-Open Sans py-16 px-4 md:px-8 lg:px-12">
+    <div className="min-h-screen bg-gray-50 font-Open Sans px-6 md:px-24  py-16">
       {/* Content wrapper to center and limit width */}
-      <div className="max-w-7xl mx-auto">
+      <div className="font-open-sans ">
 
         {/* 1. Header Section: Title and Bullet Points */}
         <section className="flex flex-col lg:flex-row gap-8 lg:gap-16 mb-12 lg:mb-20">
