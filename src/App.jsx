@@ -8,6 +8,7 @@ import Footer from "./Components/Footer/footer";
 import Hero from "./Components/Home/hero";
 import AboutUs from "./Pages/AboutUs";
 import Retail from "./Pages/Retail";
+import Itservice from "./Pages/Itservice"
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
       
            <Route path="/contact" element={<Contact />} />
           <Route  path="/fmcg" element={<FmcgPage />}/>
-           
+           <Route  path="/It services" element={<Itservice />}/>
        </Routes>
        <Footer />
     </Router>
