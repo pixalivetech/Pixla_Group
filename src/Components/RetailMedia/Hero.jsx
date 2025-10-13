@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "./../../assets/RetailMedia/Retailhero.webp";
+import Hero from "./../../assets/RetailMedia/Herokart.png";
 import {FaArrowRight } from "react-icons/fa"
 
 const PixlaGroup = () => {
@@ -35,7 +35,7 @@ const PixlaGroup = () => {
         <img
           src={Hero}
           alt="Pixla Group Building"
-          className="w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-cover object-center "
+          className="w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[500px] object-fill "
         />
 
         {/* Overlay Text & Button */}

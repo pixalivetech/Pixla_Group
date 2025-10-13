@@ -46,7 +46,7 @@ const PixaliveProject = () => {
           <img
             src={PixaliveLogo}
             alt="Pixalive Logo"
-            className="w-28 h-28 object-contain"
+            className="w-30 h-30 object-contain"
           />
           <div>
             <h3 className="text-lg font-semibold">Pixalive</h3>
