@@ -1,92 +1,113 @@
-import React from 'react';
+import React, { useState } from "react";
+/* Replace these with your actual images */
+import Thumb1 from "./../../assets/Home/thumb1.png";
+import Thumb2 from "./../../assets/Home/thumb2.png";
+import Thumb3 from "./../../assets/Home/thumb3.png";
+import Thumb4 from "./../../assets/Home/thumb4.png";
+import Thumb5 from "./../../assets/Home/thumb5.png";
 
-// Assuming you have these images in your public folder or import them
-// For demonstration, I'm using placeholder image URLs.
-// Replace with actual paths to your images:
-// import andyLamPhoto from './andy_lam.jpg';
-// import reviewThumb1 from './review_thumb1.jpg';
-// import reviewThumb2 from './review_thumb2.jpg';
-// import reviewThumb3 from './review_thumb3.jpg';
-// import reviewThumb4 from './review_thumb4.jpg';
+const initialReviews = [
+  {
+    id: 1,
+    name: "ANDYLAM",
+    text: "Allows you to collaborate, experiment, and test much more effectively and efficiently.",
+    count: "43.9K reviews",
+    img: Thumb1,
+  },
+  {
+    id: 2,
+    name: "DAVID",
+    text: "Amazing user experience and performance.",
+    count: "21.4K reviews",
+    img: Thumb2,
+  },
+  {
+    id: 3,
+    name: "MARK",
+    text: "Helps teams connect seamlessly across projects.",
+    count: "18.2K reviews",
+    img: Thumb3,
+  },
+  {
+    id: 4,
+    name: "JAMES",
+    text: "Clean design and super intuitive interface.",
+    count: "32.7K reviews",
+    img: Thumb4,
+  },
+  {
+    id: 5,
+    name: "EMMA",
+    text: "Reliable, efficient, and a joy to use every day.",
+    count: "27.1K reviews",
+    img: Thumb5,
+  },
+];
 
+export default function ReviewsSection() {
+  const [order, setOrder] = useState(initialReviews);
 
-const ReviewsSection = () => {
+  // rotate array until clicked item becomes the second one
+  const rotateToSecond = (clickedId) => {
+    let newOrder = [...order];
+    const clickedIndex = newOrder.findIndex((r) => r.id === clickedId);
+
+    if (clickedIndex === 1) return; // already active, do nothing
+
+    // Keep rotating until clicked item comes to position 1
+    while (newOrder[1].id !== clickedId) {
+      newOrder.unshift(newOrder.pop());
+    }
+
+    setOrder(newOrder);
+  };
+
   return (
-    <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Title */}
-        <h2 className="text-gray-600 text-lg sm:text-xl mb-12">
-          Reviews
-        </h2>
+    <div className="bg-[#f2f2f2] py-16 px-4 md:px-24 font-sans overflow-hidden">
+      <h4 className="text-gray-500 text-sm md:text-lg inline-block border-b-2 border-gray-200 font-medium mb-1 cursor-pointer">Reviews</h4>
 
-        {/* Main Review Card Section */}
-        <div className="flex flex-col lg:flex-row items-center lg:items-start lg:space-x-12 mb-16">
-          {/* Large Review Image */}
-          <div className="flex-shrink-0 mb-8 lg:mb-0 w-64 h-auto sm:w-80 lg:w-96">
-            <img 
-              src="https://via.placeholder.com/400x600/E0E0E0/808080?text=Andy+Lam" // Replace with actual image path
-              alt="Andy Lam" 
-              className="rounded-lg shadow-xl w-full h-auto object-cover" 
-            />
-          </div>
+      <div className="flex flex-wrap justify-center items-end gap-6 relative transition-all duration-700 ease-in-out">
+        {order.map((review, index) => {
+          const isActive = index === 1;
 
-          {/* Review Text Content */}
-          <div className="flex-grow text-center lg:text-left">
-            <p className="text-gray-900 text-4xl sm:text-5xl font-bold mb-4">#1</p>
-            <h3 className="text-gray-900 text-3xl sm:text-4xl font-extrabold mb-4">ANDYLAM</h3>
-            <p className="text-gray-600 text-lg leading-relaxed mb-6 max-w-lg mx-auto lg:mx-0">
-              Allows you to collaborate, experiment, and test much more effectively and efficiently
-            </p>
-            <p className="text-gray-500 text-base">43.9K reviews</p>
-          </div>
-        </div>
+          return (
+            <div
+              key={review.id}
+              className="relative flex flex-col md:flex-row items-start transition-all duration-700 ease-in-out cursor-pointer group"
+              onClick={() => rotateToSecond(review.id)}
+            >
+              {/* Image */}
+              <div
+                className={`relative overflow-hidden shadow-md transition-all duration-700 ease-in-out transform ${
+                  isActive
+                    ? "w-[220px] h-[400px] z-20 scale-105 group-hover:-translate-y-[30px]"
+                    : "w-[180px] h-[195px] z-10 scale-100"
+                }`}
+              >
+                <img
+                  src={review.img}
+                  alt={review.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-        {/* Smaller Reviewer Images Section (Carousel-like) */}
-        <div className="flex flex-wrap justify-center lg:justify-start gap-6 sm:gap-8">
-          {/* Image 1 */}
-          <div className="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0">
-            <img 
-              src="https://via.placeholder.com/150/E0E0E0/808080?text=Reviewer1" // Replace with actual image path
-              alt="Reviewer 1" 
-              className="w-full h-full object-cover rounded-lg shadow-md grayscale" // grayscale for B&W
-            />
-          </div>
-          {/* Image 2 */}
-          <div className="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0">
-            <img 
-              src="https://via.placeholder.com/150/E0E0E0/808080?text=Reviewer2" // Replace with actual image path
-              alt="Reviewer 2" 
-              className="w-full h-full object-cover rounded-lg shadow-md" 
-            />
-          </div>
-          {/* Image 3 */}
-          <div className="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0">
-            <img 
-              src="https://via.placeholder.com/150/E0E0E0/808080?text=Reviewer3" // Replace with actual image path
-              alt="Reviewer 3" 
-              className="w-full h-full object-cover rounded-lg shadow-md" 
-            />
-          </div>
-          {/* Image 4 */}
-          <div className="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0">
-            <img 
-              src="https://via.placeholder.com/150/E0E0E0/808080?text=Reviewer4" // Replace with actual image path
-              alt="Reviewer 4" 
-              className="w-full h-full object-cover rounded-lg shadow-md" 
-            />
-          </div>
-          {/* Image 5 (Black and white) */}
-          <div className="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0">
-            <img 
-              src="https://via.placeholder.com/150/E0E0E0/808080?text=Reviewer5" // Replace with actual image path
-              alt="Reviewer 5" 
-              className="w-full h-full object-cover rounded-lg shadow-md grayscale" // grayscale for B&W
-            />
-          </div>
-        </div>
+              {/* Review for second image */}
+              {isActive && (
+                <div className="absolute left-full bottom-60 mb-4 ml-1 bg-[#f2f2f2] p-6 w-[350px] h-fit z-30 transition-all duration-700 opacity-100">
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    #{review.id}
+                  </h3>
+                  <h2 className="text-2xl font-bold text-gray-900 mt-1">
+                    {review.name}
+                  </h2>
+                  <p className="text-sm mt-3 text-gray-600">{review.text}</p>
+                  <p className="text-sm mt-4 text-gray-500">{review.count}</p>
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   );
-};
-
-export default ReviewsSection;
+}

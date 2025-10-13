@@ -10,6 +10,9 @@ import Keys from "./Components/Home/Key";
 import Partners from "./Components/Home/Partner";
 import Acadamy from "./Components/Home/Acadamy";
 import Review from "./Components/Home/Review";
+import Blogs from "./Components/Home/Blog";
+import Path from "./Components/Home/pathway";
+
 
 
 function App() {
@@ -24,6 +27,8 @@ function App() {
       <Partners/>
       <Acadamy/>
       <Review/>
+      <Blogs />
+      <Path/>
       <Footer/>
     </Router>
   );
