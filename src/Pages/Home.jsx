@@ -8,7 +8,7 @@ import Partners from "./../Components/Home/Partner";
 import Acadamy from "./../Components/Home/Acadamy";
 import Review from "./../Components/Home/Review";
 import Blogs from "./../Components/Home/Blog";
-import Path from "./../Components/Home/pathway"; 
+import Path from "./../Components/Home/Pathway"; 
 
 const Home = () => {
   return (
