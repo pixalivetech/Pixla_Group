@@ -2,7 +2,7 @@ import React from "react";
 
 const WhoWeAre = () => {
   return (
-    <section className="w-full bg-[#f5f5f5] py-20 flex justify-center">
+    <section className="w-full bg-[#f5f5f5] py-20 flex justify-center font-Open Sans">
       <div className="w-[1280px] px-6 flex flex-col md:flex-row items-start justify-between">
         {/* Left Section - Title */}
         <div className="md:w-1/3 mb-6 md:mb-0">

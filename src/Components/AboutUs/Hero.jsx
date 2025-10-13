@@ -61,7 +61,7 @@ export default function HeroSection() {
   const display3 = count3 >= 100 ? `${count3}+` : `${count3}`;
 
   return (
-    <section ref={sectionRef} className="bg-gray-100 px-6 md:px-12 lg:px-24 py-12">
+    <section ref={sectionRef} className="bg-gray-100 px-6 md:px-12 lg:px-24 py-12 font-Open Sans">
       {/* Large heading */}
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl md:text-3xl lg:text-4xl  font-semibold text-gray-900 leading-tight">

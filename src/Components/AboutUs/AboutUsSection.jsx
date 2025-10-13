@@ -8,7 +8,7 @@ import missionLogo from "./../../assets/AboutUs/Frame4.png";
 
 const AboutUsSection = () => {
   return (
-    <section className="bg-black text-white w-full min-h-screen flex flex-col items-center px-6 md:px-12 lg:px-20 py-20 font-sans">
+    <section className="bg-black text-white w-full min-h-screen flex flex-col items-center px-6 md:px-12 lg:px-20 py-20 font-Open Sans">
       <div className="w-full max-w-[1280px] flex flex-col md:flex-row md:items-start md:justify-between gap-10">
         {/* LEFT SIDE – "About Us – Pixla Group" */}
         <div className="w-full md:w-1/3 flex md:justify-start">
