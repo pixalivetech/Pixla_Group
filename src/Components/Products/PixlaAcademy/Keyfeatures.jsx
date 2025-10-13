@@ -18,37 +18,35 @@ const PixlaKeyFeatures = () => {
             <li>
               •{" "}
               <span className="font-medium">
-                Real-Time Live Streaming:
-              </span>{" "}
-              Broadcast events, product launches, or entertainment content instantly.
+              Largest skilling network in India              </span>{" "}
             </li>
             <li>
               •{" "}
               <span className="font-medium">
-                Interactive Engagement:
+              Industry-relevant skills to enhance employability
               </span>{" "}
-              Chat, polls, Q&amp;A, and reactions during live sessions.
+              
             </li>
             <li>
               •{" "}
               <span className="font-medium">
-                Monetization &amp; Rewards:
+              Real-world experience through internships
               </span>{" "}
-              Earn revenue through brand collaborations, gifts, and viewer participation.
+              
             </li>
             <li>
               •{" "}
               <span className="font-medium">
-                Event Hosting &amp; Collaboration:
+              Career growth support with placement assistance
               </span>{" "}
-              Host workshops, webinars, and live campaigns.
+              
             </li>
             <li>
               •{" "}
               <span className="font-medium">
-                Gold Rewards System:
+              Networking opportunities with top professionals and companies
               </span>{" "}
-              Viewers earn Gold Dots while watching live streams, redeemable for products or physical gold.
+              companies
             </li>
           </ul>
         </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
-import pixaliveLogo from "./../../../assets/Pixla/a4.png";
+import pixaliveLogo from "./../../../assets/Pixla/a5.png";
  
 const PixlaHeroSection = () => {
   return (
@@ -9,16 +9,16 @@ const PixlaHeroSection = () => {
       <img
         src={pixaliveLogo}
         alt="Pixalive Logo"
-        className="h-16 w-auto mb-8"
+        className="h-20 w-auto mb-8"
       />
  
       {/* Title */}
       <h1 className="text-[70px] md:text-[110px] font-extrabold leading-none mb-4">
-        Pixalive
+      Pixlakart
       </h1>
  
       {/* Subtitle */}
-      <p className="text-lg text-gray-300 mb-3">Live Streaming Platform</p>
+      <p className="text-lg text-gray-300 mb-3">Gold for Every Swipe  </p>
  
       {/* Gold Benefits */}
       <div className="flex items-center gap-2 text-yellow-400 text-sm font-semibold mb-12">

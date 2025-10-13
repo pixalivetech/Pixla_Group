@@ -1,6 +1,6 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
-import pixaliveLogo from "./../../../assets/Pixla/a4.png";
+import pixaliveLogo from "./../../../assets/Pixla/a1.png";
  
 const PixlaHeroSection = () => {
   return (

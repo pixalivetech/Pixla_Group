@@ -18,37 +18,37 @@ const PixlaKeyFeatures = () => {
             <li>
               •{" "}
               <span className="font-medium">
-                Real-Time Live Streaming:
+              Affiliate Network:
               </span>{" "}
-              Broadcast events, product launches, or entertainment content instantly.
+              Connects brands with affiliates to expand reach and sales.
             </li>
             <li>
               •{" "}
               <span className="font-medium">
-                Interactive Engagement:
+              Performance Tracking:
               </span>{" "}
-              Chat, polls, Q&amp;A, and reactions during live sessions.
+              Monitor clicks, conversions, and revenue in real-time.
             </li>
             <li>
               •{" "}
               <span className="font-medium">
-                Monetization &amp; Rewards:
+              Monetization Opportunities::
               </span>{" "}
-              Earn revenue through brand collaborations, gifts, and viewer participation.
+              Affiliates earn commissions for driving sales.
             </li>
             <li>
               •{" "}
               <span className="font-medium">
-                Event Hosting &amp; Collaboration:
+              Campaign Management:
               </span>{" "}
-              Host workshops, webinars, and live campaigns.
+              Brands can create, manage, and optimize campaigns easily.
             </li>
             <li>
               •{" "}
               <span className="font-medium">
-                Gold Rewards System:
+              Gold Rewards System:
               </span>{" "}
-              Viewers earn Gold Dots while watching live streams, redeemable for products or physical gold.
+              Users participating in campaigns can earn Gold Dots, redeemable for products or physical gold.
             </li>
           </ul>
         </div>

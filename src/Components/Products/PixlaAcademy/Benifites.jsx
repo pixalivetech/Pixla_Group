@@ -1,78 +1,72 @@
 import React from "react";
-import businessMan from "./../../../assets/Pixla/p2.png"; // left big image (businessman)
-import dotsBg from "./../../../assets/Pixla/dots.png";     // dotted decoration
-import orangeBg from "./../../../assets/Pixla/orange.png"; // subtle orange rectangle (we render as div)
-import phoneImg from "./../../../assets/Pixla/p3.png";     // phone image used in Users section
+import businessMan from "./../../../assets/pixlaAcademy/p2.png"; // businessman image
+import dotsBg from "./../../../assets/pixlaAcademy/dots.png";    // dotted overlay
+import peopleBg from "./../../../assets/pixlaAcademy/peoplebg.png"; // faint people background
+import phoneImg from "./../../../assets/Pixlaacademy/p3.png";        // phone image for second section
 
-/**
- * PixlaBenefitsSection
- *
- * - Desktop: left column contains stacked images/decorations, right column contains text lists.
- * - Mobile: images stack above the text and everything remains centered/readable.
- *
- * Tailwind classes are used. Adjust widths/heights or colors to match your exact assets if needed.
- */
 const PixlaBenefitsSection = () => {
   return (
     <section className="bg-[#f6f6f6] py-20 px-6 md:px-24">
       <div className="max-w-[1280px] mx-auto flex flex-col gap-28">
 
-        {/* ---------- Benefits for Businesses ---------- */}
+        {/* ---------- Franchise Opportunities ---------- */}
         <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-10">
-          {/* LEFT: image composition (businessman + decorations) */}
-          <div className="relative flex justify-center md:justify-start">
-            {/* faint blurred background image (we use orange bg block to simulate) */}
-            <div
-              className="absolute top-[-10px] left-[-20px] w-[420px] h-[300px] rounded-md"
-              style={{
-                backgroundImage: `url(${orangeBg})`,
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-                opacity: 0.12,
-                filter: "blur(0px)",
-                zIndex: 0,
-              }}
+          
+          {/* LEFT SIDE: image composition */}
+          <div className="relative flex justify-center md:justify-start w-full">
+            
+            {/* 1️⃣ faint background with people */}
+            <img
+              src={peopleBg}
+              alt="people background"
+              className="absolute top-0 left-[-40px] w-[420px] h-[320px] object-cover opacity-40 z-0"
             />
 
-            {/* dotted pattern */}
+            {/* 2️⃣ dotted pattern */}
             <img
               src={dotsBg}
-              alt="dots pattern"
-              className="absolute top-0 left-[-20px] w-[160px] opacity-70 z-10"
+              alt="dots"
+              className="absolute top-10 left-[-30px] w-[160px] opacity-80 z-10"
             />
 
-            {/* large businessman image */}
+            {/* 3️⃣ businessman main image */}
             <img
               src={businessMan}
-              alt="Businessman"
-              className="relative z-20 w-[280px] md:w-[360px] object-cover rounded-sm"
+              alt="businessman"
+              className="relative z-20 w-[280px] md:w-[360px] object-cover"
             />
 
-            {/* black overlay box with "Growth" text */}
-            <div className="absolute z-30 md:bottom-[-20px] bottom-0 left-0 md:left-[60px] bg-black text-white px-5 py-6 md:px-6 md:py-8">
-              <p className="text-sm text-gray-300 mb-2">“Benefits for Businesses”</p>
-              <h3 className="text-2xl md:text-3xl font-semibold">Growth</h3>
+            {/* 4️⃣ black box behind the yellow one */}
+            <div className="absolute bottom-[-10px] left-0 md:left-[40px] bg-black w-[250px] h-[100px] md:w-[270px] md:h-[120px] z-30"></div>
+
+            {/* 5️⃣ yellow box with text */}
+            <div className="absolute bottom-[-20px] left-[60px] bg-[#f6b800] text-black px-5 py-5 md:px-6 md:py-7 w-[220px] md:w-[240px] z-40 shadow-lg">
+              <p className="text-[13px] font-medium mb-1">
+                “Benefits for Businesses”
+              </p>
+              <h3 className="text-2xl font-semibold leading-tight">Growth</h3>
             </div>
           </div>
 
-          {/* RIGHT: content for Businesses */}
+          {/* RIGHT SIDE: text content */}
           <div className="pt-6 md:pt-0">
             <h2 className="text-[#7a7a7a] text-[20px] font-medium underline underline-offset-4 decoration-[#bfbfbf] mb-6">
-              Benefits for Businesses
+              Franchise Opportunities
             </h2>
 
             <ul className="space-y-6 text-[#1f1f1f] text-[17px] leading-relaxed list-inside">
-              <li>• Boost engagement with interactive live sessions</li>
-              <li>• Promote products or services in real-time</li>
-              <li>• Track audience interaction and ROI</li>
-              <li>• Build brand loyalty through live experiences</li>
+              <li>• Join India’s largest skilling network as a franchise partner</li>
+              <li>• Set up training centers in your city or district with Pixla’s support</li>
+              <li>• Benefit from proven curriculum, branding, and operational guidance</li>
+              <li>• Contribute to empowering students and professionals while growing your business</li>
             </ul>
           </div>
         </div>
 
-        {/* ---------- Benefits for Users ---------- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-10">
-          {/* LEFT: phone image (kept left as requested) */}
+        {/* ---------- Our Programs Section ---------- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          
+          {/* LEFT: phone image */}
           <div className="flex justify-center md:justify-start items-start">
             <img
               src={phoneImg}
@@ -81,34 +75,47 @@ const PixlaBenefitsSection = () => {
             />
           </div>
 
-          {/* RIGHT: two-column lists (Creators / Viewers) */}
+          {/* RIGHT: programs content */}
           <div>
             <h2 className="text-[#7a7a7a] text-[20px] font-medium underline underline-offset-4 decoration-[#bfbfbf] mb-6">
-              Benefits for Users
+              Our Programs
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              
+              {/* Training Programs */}
               <div>
-                <p className="font-semibold text-gray-700 mb-3">For Creators / Hosts:</p>
+                <p className="font-semibold text-gray-700 mb-3">Training Programs</p>
                 <ul className="list-disc ml-5 space-y-2 text-[16px] text-gray-800 leading-relaxed">
-                  <li>Broadcast content to a live audience</li>
-                  <li>Earn revenue through gifts, sponsorships, and collaborations</li>
-                  <li>Engage with followers in real-time</li>
-                  <li>Participate in platform campaigns and events</li>
+                  <li>Promoting a greener future through seed ball and sapling initiatives.</li>
                 </ul>
               </div>
 
+              {/* Internship Opportunities */}
               <div>
-                <p className="font-semibold text-gray-700 mb-3">For Viewers / Audience:</p>
+                <p className="font-semibold text-gray-700 mb-3">Internship Opportunities</p>
                 <ul className="list-disc ml-5 space-y-2 text-[16px] text-gray-800 leading-relaxed">
-                  <li>Access live, interactive content</li>
-                  <li>Earn Gold Dots for watching and participating</li>
-                  <li>Redeem Gold Dots for products or physical gold</li>
-                  <li>Interact with creators via chat, polls, and reactions</li>
-                  <li>Discover trends and exclusive live events</li>
+                  <li>3–6 month internships with hands-on experience</li>
+                  <li>Live project work at Pixla Technology Services</li>
+                  <li>Placement opportunities</li>
+                </ul>
+              </div>
+
+              {/* Placement Support */}
+              <div className="md:col-span-2">
+                <p className="font-semibold text-gray-700 mb-3">Placement Support</p>
+                <ul className="list-disc ml-5 space-y-2 text-[16px] text-gray-800 leading-relaxed">
+                  <li>Guidance to secure jobs in IT and technology sectors</li>
+                  <li>Resume building, interview preparation, and mentoring</li>
+                  <li>Access to Pixla’s partner network and recruitment pipeline</li>
                 </ul>
               </div>
             </div>
+
+            {/* Button */}
+            <button className="bg-black text-white px-8 py-2 mt-6 hover:bg-gray-800 transition-all duration-300">
+              Click
+            </button>
           </div>
         </div>
 

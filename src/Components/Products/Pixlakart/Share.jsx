@@ -8,7 +8,8 @@ export default function DownloadApp() {
       <div
         className="shadow-lg flex flex-col md:flex-row items-center justify-between max-w-7xl w-[75%] px-6 md:px-24 py-16"
         style={{
-          background: "linear-gradient(180deg, #D8D8D7 0%, #FFFFFF 46.63%, #D8D8D7 100%)",
+          background: "linear-gradient(180deg, #B7FFC7 0%, #FFFFFF 46.63%, #B7FFC7 100%)",
+
         }}
       >
         {/* Left Section */}

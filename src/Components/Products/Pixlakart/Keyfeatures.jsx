@@ -18,37 +18,37 @@ const PixlaKeyFeatures = () => {
             <li>
               •{" "}
               <span className="font-medium">
-                Real-Time Live Streaming:
+              Aggregated Shopping: 
               </span>{" "}
-              Broadcast events, product launches, or entertainment content instantly.
+              Access products from multiple brands and retailers in a single platform.
             </li>
             <li>
               •{" "}
               <span className="font-medium">
-                Interactive Engagement:
+              Personalized Experience:
               </span>{" "}
-              Chat, polls, Q&amp;A, and reactions during live sessions.
+              AI-driven recommendations for relevant products.
             </li>
             <li>
               •{" "}
               <span className="font-medium">
-                Monetization &amp; Rewards:
+              Easy Checkout & Payments:
               </span>{" "}
-              Earn revenue through brand collaborations, gifts, and viewer participation.
+              Secure, fast, and user-friendly transactions.
             </li>
             <li>
               •{" "}
               <span className="font-medium">
-                Event Hosting &amp; Collaboration:
+              Gold Rewards System:
               </span>{" "}
-              Host workshops, webinars, and live campaigns.
+              Users earn Gold Dots on purchases, redeemable for consumer products or physical gold.
             </li>
             <li>
               •{" "}
               <span className="font-medium">
-                Gold Rewards System:
+              Promotions & Campaigns:
               </span>{" "}
-              Viewers earn Gold Dots while watching live streams, redeemable for products or physical gold.
+              Brands can run special offers, discounts, and loyalty programs.
             </li>
           </ul>
         </div>
