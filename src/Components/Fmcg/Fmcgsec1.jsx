@@ -40,7 +40,7 @@ const Fmcgsec1 = () => {
         />
  
         {/* Overlay Text & Button */}
-        <div className="absolute inset-0 flex items-end justify-between px-4 sm:px-6 md:px-8 pb-6 ">
+        <div className="absolute inset-0 flex items-end justify-between px-4 sm:px-6 md:px-8 pb-6">
           {/* Text Box */}
           <div className="p-3 sm:p-4 text-white bg-black/30 backdrop-blur-sm shadow-lg rounded-lg ">
             <h2 className="text-base sm:text-lg md:text-xl font-semibold mb-1">
@@ -73,10 +73,10 @@ const Fmcgsec1 = () => {
               />
             </svg>
           </button> */}
-         <button className="flex items-center gap-2 bg-white text-black px-5 py-5 rounded-full hover:bg-gray-800 transition">
+         <button className="flex items-center gap-2 bg-white text-black px-5 py-5 mb-4 rounded-full hover:bg-gray-800 transition">
       <FaArrowRight className="text-xl rotate-320" />
     </button>
-        </div>
+        </div>  
       </div>
  
       {/* Why Choose Section */}
