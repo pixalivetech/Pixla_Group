@@ -55,9 +55,9 @@ const TeamSection = () => {
   };
 
   return (
-    <section className="w-full bg-[#f4f4f4] py-16 px-4 md:px-10 lg:px-20 font-poppins">
+    <section className=" bg-[#f4f4f4] px-6 md:px-24  py-16font-poppins">
       {/* Top Section */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10">
+      <div className=" flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10">
         <h2 className="text-lg md:text-[24px] font-semibold text-[#7A7A7A] underline underline-offset-4 decoration-gray-400">
           Our Team
         </h2>
@@ -89,7 +89,7 @@ const TeamSection = () => {
       </div>
 
       {/* Animated Grid */}
-      <div className="max-w-7xl mx-auto">
+      <div className="font-open sans">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTeam}

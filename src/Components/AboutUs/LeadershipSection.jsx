@@ -8,16 +8,16 @@ import leftSideVisual from './../../assets/AboutUs/person.png';
 const LeadershipSection = () => {
   return (
     // Outer container: Sets the light gray background for the page area and centers the content block.
-    <div className="flex justify-center items-center h-screen w-full bg-[#F5F5F5] font-Open Sans">
+    <div className="flex justify-center items-center px-6 md:px-24  py-16 bg-[#F5F5F5] font-Open Sans">
       
       {/* Main content block: Max width is crucial for the proportions. No shadow. */}
       <div 
-        className="w-full max-w-5xl flex flex-col lg:flex-row overflow-hidden bg-white/0"
+        className=" flex flex-col lg:flex-row overflow-hidden bg-white/0"
       >
         
         {/* === LEFT SIDE: Exact Visual Area with Fade === */}
         {/* The 'relative' class is crucial for positioning the gradient overlay. */}
-        <div className="lg:w-[58%] min-h-[450px] relative"> 
+        <div className=" relative"> 
           <img 
             src={leftSideVisual} 
             alt="Visionary leadership and growth quote" 

@@ -2,8 +2,8 @@ import React from "react";
 
 const WhoWeAre = () => {
   return (
-    <section className="w-full bg-[#f5f5f5] py-20 flex justify-center font-Open Sans">
-      <div className="w-[1280px] px-6 flex flex-col md:flex-row items-start justify-between">
+    <section className=" bg-[#f5f5f5] px-6 md:px-24  py-16 flex justify-center font-Open Sans">
+      <div className=" flex flex-col md:flex-row items-start justify-between">
         {/* Left Section - Title */}
         <div className="md:w-1/3 mb-6 md:mb-0">
           <h2 className="text-[#7A7A7A] text-[18px] font-medium border-b border-gray-400 inline-block pb-1">

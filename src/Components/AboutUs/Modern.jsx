@@ -45,10 +45,10 @@ const App = () => {
   return (
     // Set the background to black and enforce Open Sans for the entire application
     <div 
-      className="min-h-screen bg-black text-white p-4 sm:p-8 lg:p-16" 
+      className="min-h-screen bg-black text-white px-6 md:px-24  py-16" 
       style={{ fontFamily: 'Open Sans, sans-serif' }}
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="font-open-sans">
         
         {/* 1. TOP SECTION: Event Title (Left) and Description (Right) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 lg:mb-24">
