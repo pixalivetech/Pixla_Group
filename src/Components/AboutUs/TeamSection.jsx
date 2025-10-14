@@ -55,7 +55,7 @@ const TeamSection = () => {
   };
 
   return (
-    <section className=" bg-[#f4f4f4] px-6 md:px-24  py-16font-poppins">
+    <section className=" bg-[#f4f4f4] px-6 md:px-24  py-16 font-poppins">
       {/* Top Section */}
       <div className=" flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-10">
         <h2 className="text-lg md:text-[24px] font-semibold text-[#7A7A7A] underline underline-offset-4 decoration-gray-400">

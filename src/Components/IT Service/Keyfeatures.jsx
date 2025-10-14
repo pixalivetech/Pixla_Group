@@ -3,7 +3,7 @@ import React from 'react'
 
 const Keyfeatures = () => {
   return (
-       <section className="bg-[#f6f6f6] px-6 md:px-24 py-16">
+       <section className="bg-[#F2F2F2] px-6 md:px-24 py-16">
         <div className="flex flex-col md:flex-row items-start  ">
         <a
           href="#"

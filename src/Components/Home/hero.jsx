@@ -111,7 +111,7 @@ const DivisionsSection = () => {
         </div>
 
         {/* --- Statistics Bar --- */}
-        <div className="mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center">
+        <div className="mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-40 items-center">
           {stats.map((s, idx) => {
             const animated = animatedValues[idx];
             return (
