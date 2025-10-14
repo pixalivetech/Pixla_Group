@@ -46,7 +46,7 @@ export default function KeyInitiatives() {
           <img
             src={DivisionImage}
             alt="Division"
-            className="w-40 h-48 object-cover"
+            className="w-50 h-55 object-cover"
           />
         </div>
 

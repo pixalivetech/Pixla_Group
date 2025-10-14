@@ -5,8 +5,8 @@ import RightImg from "./../../assets/Home/hero1.png";
 
 export default function WhoWeAreSection() {
   return (
-    <section className="bg-[#f2f2f2] py-12 md:py-24 font-sans">
-      <div className="mx-auto px-4 sm:px-6 md:px-24">
+    <section className="bg-[#f2f2f2] py-16 md:py-24 font-sans">
+      <div className="mx-auto px-6 md:px-24">
         {/* ===== DESKTOP / TABLET VIEW ===== */}
         <div className="hidden md:flex items-start justify-between gap-12">
           {/* LEFT COLUMN */}
@@ -45,7 +45,7 @@ export default function WhoWeAreSection() {
               <div className="w-72 h-[1px] bg-gray-300"></div>
 
               <a
-                href="#"
+                href="/about"
                 className="inline-flex items-center gap-3 bg-black text-white 
                            px-4 py-2 text-base font-medium shadow-sm 
                            whitespace-nowrap hover:bg-gray-800 transition duration-300"

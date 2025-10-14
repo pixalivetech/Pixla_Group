@@ -88,7 +88,7 @@ const DivisionsSection = () => {
           <div className="absolute inset-0 flex items-start justify-center pointer-events-none">
             <div className="bg-[#f2f2f2]/100 backdrop-blur-sm pl-30 pb-8 pr-30 shadow-lg">
               <a
-                href="#"
+                href="/retail"
                 className="inline-flex items-center justify-center 
                        bg-black text-white px-8 py-3 
                        text-base font-medium shadow-lg 
@@ -111,7 +111,7 @@ const DivisionsSection = () => {
         </div>
 
         {/* --- Statistics Bar --- */}
-        <div className="mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center">
+        <div className="mt-10 md:mt-16 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-40 items-center">
           {stats.map((s, idx) => {
             const animated = animatedValues[idx];
             return (
