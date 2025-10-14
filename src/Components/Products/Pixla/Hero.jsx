@@ -21,7 +21,7 @@ const PixlaShowcase = () => {
   return (
     <section
       ref={ref}
-      className="relative bg-[#f5f5f5] flex flex-col items-center justify-center px-6 md:px-24 py-16 overflow-hidden"
+      className="relative  flex flex-col items-center justify-center px-6 md:px-24 py-16 overflow-hidden"
     >
       {/* Background curves (Left + Right) */}
       <img

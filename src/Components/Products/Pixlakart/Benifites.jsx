@@ -1,60 +1,46 @@
 import React from "react";
-import peopleBg from "./../../../assets/Pixlakart/peoplebg.png"; // faint people background
-import dotsBg from "./../../../assets/Pixla/dots.png";       // dotted overlay
-import businessMan from "./../../../assets/Pixla/p2.png";    // main businessman
-import phoneImg from "./../../../assets/Pixlakart/p3.png";       // phone image
+import dotsBg from "./../../../assets/Pixla/dots.png";            // dotted overlay
+import businessMan from "./../../../assets/Pixla/p2.png";         // main businessman
+import phoneImg from "./../../../assets/Pixlakart/p3.png";        // phone image
 
 const PixlaBenefitsSection = () => {
   return (
-    <section className="bg-[#f6f6f6] py-20 px-6 md:px-24">
-      <div className="max-w-[1280px] mx-auto flex flex-col gap-28">
+    <section className="background: #F2F2F2; py-16 md:py-24 px-5 md:px-24">
+      <div className="max-w-[1200px] mx-auto flex flex-col gap-20">
         
-        {/* ----------------- Benefits for Businesses ----------------- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-10">
+        {/* ---------- Benefits for Businesses ---------- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-16">
           
-          {/* LEFT IMAGE STACK */}
+          {/* LEFT IMAGE SECTION */}
           <div className="relative flex justify-center md:justify-start w-full">
-            
-            {/* 1️⃣ Faint people background */}
-            <img
-              src={peopleBg}
-              alt="People background"
-              className="absolute top-0 left-[-40px] w-[420px] h-[320px] object-cover opacity-30 z-0"
-            />
-
-            {/* 2️⃣ Dots overlay */}
+            {/* Dots overlay */}
             <img
               src={dotsBg}
-              alt="Dots"
-              className="absolute top-10 left-[-30px] w-[150px] opacity-80 z-10"
+              alt="dots"
+              className="absolute top-[-28px] left-[-28px] w-[120px] md:w-[210px] z-10 opacity-80"
             />
-
-            {/* 3️⃣ Main businessman image */}
+            {/* Businessman main image */}
             <img
               src={businessMan}
-              alt="Businessman"
-              className="relative z-20 w-[280px] md:w-[360px] object-cover"
+              alt="business man"
+              className="relative z-20 w-[220px] md:w-[320px] object-cover"
             />
 
-            {/* 4️⃣ Black rectangle behind green box */}
-            <div className="absolute bottom-[-10px] left-[10px] md:left-[60px] bg-black w-[250px] h-[100px] md:w-[280px] md:h-[120px] z-30"></div>
-
-            {/* 5️⃣ Green “Growth” box */}
-            <div className="absolute bottom-[-20px] left-[70px] bg-[#009e3f] text-white px-5 py-5 md:px-6 md:py-7 w-[220px] md:w-[260px] z-40 shadow-lg">
-              <p className="text-[13px] font-medium mb-1">
+            {/* Growth box */}
+            <div className="absolute left-[100px] md:left-[180px] bottom-[20px] md:bottom-[150px] bg-[#28A745] text-white px-4 py-3 md:px-8 md:py-8 shadow-lg z-30">
+              <p className="text-xs md:text-sm mb-1 opacity-90">
                 “Benefits for Businesses”
               </p>
-              <h3 className="text-2xl font-semibold leading-tight">Growth</h3>
+              <h3 className="text-lg md:text-3xl font-semibold">Growth</h3>
             </div>
           </div>
 
-          {/* RIGHT CONTENT */}
-          <div className="pt-6 md:pt-0">
-            <h2 className="text-[#7a7a7a] text-[20px] font-medium underline underline-offset-4 decoration-[#bfbfbf] mb-6">
+          {/* RIGHT TEXT SECTION */}
+          <div className="mt-6 md:mt-0">
+            <h2 className="text-[#8d8d8d] text-[18px] md:text-[20px] font-medium mb-6 underline underline-offset-4 decoration-[#bfbfbf]">
               Benefits for Businesses
             </h2>
-
-            <ul className="space-y-6 text-[#1f1f1f] text-[17px] leading-relaxed list-inside">
+            <ul className="space-y-3 md:space-y-4 text-[#1f1f1f] text-[15px] md:text-[16px] leading-relaxed">
               <li>• Expand digital reach and connect with more customers</li>
               <li>• Showcase products in a centralized marketplace</li>
               <li>• Run promotions and campaigns effectively</li>
@@ -64,30 +50,36 @@ const PixlaBenefitsSection = () => {
           </div>
         </div>
 
-        {/* ----------------- Benefits for Users / Consumers ----------------- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 items-start gap-10">
+        {/* ---------- Benefits for Users / Consumers ---------- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-16">
           
-          {/* LEFT CONTENT */}
+          {/* LEFT TEXT SECTION */}
           <div>
-            <h2 className="text-[#7a7a7a] text-[20px] font-medium underline underline-offset-4 decoration-[#bfbfbf] mb-6">
+            <h2 className="text-[#8d8d8d] text-[18px] md:text-[20px] font-medium mb-6 underline underline-offset-4 decoration-[#bfbfbf]">
               Benefits for Users / Consumers
             </h2>
-
-            <ul className="space-y-4 text-[#1f1f1f] text-[17px] leading-relaxed list-disc ml-5">
-              <li>Discover and purchase products from multiple brands in one place</li>
-              <li>Earn Gold Dots with every purchase or interaction</li>
-              <li>Redeem Gold Dots for products or physical gold</li>
-              <li>Enjoy personalized product recommendations</li>
-              <li>Access exclusive offers, discounts, and loyalty rewards</li>
+            <ul className="space-y-3 md:space-y-4 text-[#1f1f1f] text-[15px] md:text-[16px] leading-relaxed">
+              <li>• Discover and purchase products from multiple brands in one place</li>
+              <li>• Earn Gold Dots with every purchase or interaction</li>
+              <li>• Redeem Gold Dots for products or physical gold</li>
+              <li>• Enjoy personalized product recommendations</li>
+              <li>• Access exclusive offers, discounts, and loyalty rewards</li>
             </ul>
           </div>
 
-          {/* RIGHT IMAGE (Phone) */}
-          <div className="flex justify-center md:justify-end items-start">
+          {/* RIGHT IMAGE SECTION */}
+          <div className="flex justify-center md:justify-end">
             <img
               src={phoneImg}
-              alt="Pixla Phone"
-              className="w-[200px] md:w-[280px] rounded-md object-cover"
+              alt="Pixla phone"
+              className="w-[200px] md:w-[300px] object-contain rounded-md shadow-md"
+            />
+
+            {/* Optional dots decoration */}
+            <img
+              src={dotsBg}
+              alt="dots"
+              className="absolute bottom-[-20px] right-[-20px] w-[100px] md:w-[160px] opacity-60 z-10"
             />
           </div>
         </div>

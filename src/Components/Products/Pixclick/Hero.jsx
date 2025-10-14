@@ -15,7 +15,7 @@ const PixClickShowcase = () => {
   return (
     <section
       ref={ref}
-      className="relative bg-[#f6f6f6] py-20 px-6 flex flex-col items-center overflow-hidden"
+      className="relative background: #F2F2F2; py-20 px-6 flex flex-col items-center overflow-hidden"
     >
       {/* Background Curves */}
       <img
