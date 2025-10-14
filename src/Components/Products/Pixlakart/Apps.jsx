@@ -50,7 +50,7 @@ const PixlaGroup = () => {
   };
  
   return (
-    <div className="bg-[#f4f4f4] min-h-screen flex flex-col items-center px-6 md:px-24  py-16">
+    <div className="background: #F2F2F2; min-h-screen flex flex-col items-center px-6 md:px-24  py-16">
       {/* Header */}
       <div className="text-center mb-12">
         <img src={pixlaLogo} alt="Pixla Group Logo" className="w-20 h-20 mx-auto mb-4" />
@@ -83,7 +83,7 @@ const PixlaGroup = () => {
         {/* Centered bottom card */}
         <div
           onClick={() => handleClick(divisions[4].link)}
-          className={`w-[220px] h-[260px] md:w-[250px] md:h-[280px] rounded-md border border-gray-200 bg-gradient-to-b ${divisions[4].gradient}
+          className={`w-[220px] h-[260px] md:w-[250px] md:h-[280px] rounded-md border border-black bg-gradient-to-b ${divisions[4].gradient}
           flex flex-col items-center justify-center text-center shadow-sm mt-13 hover:scale-105 transition-transform duration-300 cursor-pointer`}
         >
           <div className="bg-black rounded-md w-20 h-20 flex items-center justify-center mb-4">
