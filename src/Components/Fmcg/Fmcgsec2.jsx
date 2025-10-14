@@ -5,9 +5,9 @@ const Fmcgsec2 = () => {
   return (
   
        <section className="bg-[#f2f2f2] px-6 md:px-24 py-16">
-         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
            {/* Left: Image with Text Overlay */}
-           <div className="relative  overflow-hidden shadow-md">
+           <div className="relative  overflow-hidden shadow-md ">
              <img
                src={Fmcgimg2}
                alt="Retail Media Network"
@@ -23,7 +23,7 @@ const Fmcgsec2 = () => {
            {/* Right: Product List */}
            <div className="bg-white  shadow-md p-6 md:p-8 flex flex-col justify-center">
              <h2 className="text-3xl font-semibold text-gray-900 mb-4">#Products</h2>
-             <ul className="list-disc list-inside text-black space-y-2 text-base">
+             <ul className="list-disc list-inside text-black space-y-2 text-base font-semibold">
                <li>Beverages</li>
                <li>Groceries</li>
                <li>Wellness Products</li>   

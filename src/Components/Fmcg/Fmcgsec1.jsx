@@ -25,8 +25,8 @@ const Fmcgsec1 = () => {
             Get Started →
           </button>
           <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-            Pixla Consumer Products provides beverages, groceries,<br/>
-             and wellness items designed for both consumers and<br/> businesses.
+            Pixla Consumer Products provides beverages, groceries,
+             and wellness items designed for both consumers and businesses.
           </p>
         </div>
       </div>
@@ -89,11 +89,11 @@ const Fmcgsec1 = () => {
         </a>
  
         <p className="md:w-1/2 text-gray-600 text-sm sm:text-base leading-relaxed md:max-w-2xl">
-        Pixla Consumer Products offers trusted everyday <br/>
-        essentials across beverages, groceries, and wellness. <br/>
-        With a strong distribution network, diverse product lines,<br/> 
-        and a focus on quality, taste, and accessibility, Pixla<br/>
-         serves both consumers and businesses while supporting<br/>
+        Pixla Consumer Products offers trusted everyday 
+        essentials across beverages, groceries, and wellness. 
+        With a strong distribution network, diverse product lines,
+        and a focus on quality, taste, and accessibility, Pixla
+         serves both consumers and businesses while supporting
           retailers and partners.
         </p>
       </div>
