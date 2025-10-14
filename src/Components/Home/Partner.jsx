@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import handshakeImage from "./../../assets/Home/partner.png";
 
 export default function InvestorsAndPartners() {
@@ -61,12 +62,14 @@ export default function InvestorsAndPartners() {
             </ul>
 
             <div className="mt-10">
+              <Link to ="/about">
               <button
                 type="button"
                 className="inline-block py-3 px-10 bg-black text-white text-lg font-semibold hover:bg-gray-800 transition"
               >
                 Explore
               </button>
+              </Link>
             </div>
           </div>
         </div>
