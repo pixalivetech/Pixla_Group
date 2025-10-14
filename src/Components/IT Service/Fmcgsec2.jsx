@@ -4,7 +4,7 @@ import Fmcgimg2 from "./../../assets/It/It2.png"
 const Fmcgsec2 = () => {
   return (
   
-       <section className="bg-[#f6f6f6] px-6 md:px-24 py-16">
+       <section className="bg-[#f2F2F2] px-6 md:px-24 py-16">
          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
            {/* Left: Image with Text Overlay */}
            <div className="relative  overflow-hidden shadow-md">

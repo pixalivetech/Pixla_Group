@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
  
 const Fmcgsec1 = () => {
   return (
-    <section className="bg-[#f6f6f6] px-6 md:px-24 py-16">
+    <section className="bg-[#f2F2F2] px-6 md:px-24 py-16">
       {/* Top Section */}
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-10">
         {/* Heading */}

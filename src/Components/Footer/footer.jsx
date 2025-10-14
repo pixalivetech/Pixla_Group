@@ -1,64 +1,92 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
+  const [openDivisions, setOpenDivisions] = useState(false);
+  const divisionsRef = useRef(null);
+
+  // Division links with proper routes
+  const divisionsLinks = [
+    { name: "Retail", path: "/retail" },
+    { name: "FMCG", path: "/fmcg" },
+    { name: "IT Services", path: "/it-services" },
+  ];
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (divisionsRef.current && !divisionsRef.current.contains(event.target)) {
+        setOpenDivisions(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
-    <footer>
-      {/* Footer Content Section (Black Background) */}
-      <div className="bg-black text-white px-6 md:px-24 py-16 font-sans">
-        {/* Top Section: Contact CTA and Social Links */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center pb-12 gap-8">
-          {/* Left Text */}
+    <footer className="font-sans">
+      {/* Black Footer Section */}
+      <div className="bg-black text-white px-6 md:px-24 py-16">
+        {/* Top CTA Section */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-12">
           <div className="flex flex-col gap-2">
             <h3 className="text-2xl font-semibold leading-snug">
               DROP US A LINE, AND WE’LL <br className="hidden sm:inline" /> GET IN TOUCH!
             </h3>
-            <a
-              href="#"
+            <Link
+              to="/contact"
               className="block mt-1 text-md underline underline-offset-4 hover:text-gray-300 transition duration-150"
             >
               SCHEDULE A CALL
-            </a>
+            </Link>
           </div>
 
           {/* Social Links */}
-          {/* Increased gap and space-x for better mobile touch targets */}
-          <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium">
-            <a href="#" className="hover:text-gray-300 transition duration-150">
-              LINKEDIN
-            </a>
-            <a href="#" className="hover:text-gray-300 transition duration-150">
-              INSTAGRAM
-            </a>
-            <a href="#" className="hover:text-gray-300 transition duration-150">
-              FACEBOOK
-            </a>
-            <a href="#" className="hover:text-gray-300 transition duration-150">
-              YOUTUBE
-            </a>
+          <div className="flex flex-wrap gap-x-30 gap-y-2 text-sm font-medium">
+            {[
+              {
+                name: "LINKEDIN",
+                url: "https://www.linkedin.com/company/pixla-gold-network",
+              },
+              { name: "INSTAGRAM", url: "https://www.instagram.com/pixla_group/" },
+              {
+                name: "YOUTUBE",
+                url: "https://www.youtube.com/@PixlaGroupOfficial",
+              },
+            ].map((social, idx) => (
+              <a
+                key={idx}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-300 transition duration-150"
+              >
+                {social.name}
+              </a>
+            ))}
           </div>
         </div>
 
-        {/* Separator Line */}
+        {/* Separator */}
         <hr className="border-gray-800 my-8" />
 
-        {/* Middle Section: Email Address */}
-        <div className="flex justify-center md:justify-end  mb-10 mt-6">
+        {/* Email CTA */}
+        <div className="flex justify-center md:justify-end mb-10 mt-6">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold flex items-center gap-2 cursor-pointer hover:text-gray-300 transition duration-150">
             HELLO@PIXLAGROUP.COM
             <ArrowUpRight size={38} className="text-white" />
           </h2>
         </div>
 
-        {/* THREE COLUMNS (Address, Divisions, Investors) */}
-        <div className="flex flex-col md:flex-row justify-start md:justify-end text-sm leading-relaxed gap-10 md:gap-12 lg:gap-20">
-          {/* LEFT COLUMN: Address & Contact Details */}
+        {/* Footer Columns */}
+        <div className="flex flex-col md:flex-row justify-start md:justify-end text-sm leading-relaxed gap-10 md:gap-12 lg:gap-14">
+          {/* Address */}
           <div className="max-w-xs text-left">
             <p>
-              SY NO 35/2, KONAPPANA AGRAHARA(V), Electronics City, Bangalore South
-              Bangalore, Karnataka-560100
+              SY NO 35/2, KONAPPANA AGRAHARA(V), Electronics City, Bangalore
+              South Bangalore, Karnataka-560100
             </p>
-
             <p className="mt-4">
               <span className="font-semibold">Mobile No :</span>{" "}
               <a
@@ -68,7 +96,6 @@ export default function Footer() {
                 8778584566
               </a>
             </p>
-
             <p className="mt-1">
               <span className="font-semibold">Email :</span>{" "}
               <a
@@ -80,35 +107,92 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* CENTER COLUMN: Divisions */}
-          <div className="text-left">
+          {/* Divisions */}
+          <div className="text-left relative" ref={divisionsRef}>
             <ul className="space-y-2">
-              <li className="text-white font-semibold">Divisions ▾</li>
-              <li className="text-gray-400 hover:text-gray-200 cursor-pointer transition duration-150">About Us</li>
-              <li className="text-gray-400 hover:text-gray-200 cursor-pointer transition duration-150">Careers</li>
+              <li>
+                <button
+                  onClick={() => setOpenDivisions(!openDivisions)}
+                  className="text-white font-semibold flex items-center gap-2 hover:text-gray-200 transition duration-150"
+                >
+                  Divisions ▾
+                </button>
+
+                {/* Dropdown menu */}
+                <ul
+                  className={`absolute left-0 mt-2 bg-black border border-gray-800 rounded-md overflow-hidden transition-all duration-300 z-10 ${
+                    openDivisions ? "max-h-60 opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+                  }`}
+                >
+                  {divisionsLinks.map((div, idx) => (
+                    <li key={idx}>
+                      <Link
+                        to={div.path}
+                        className="block text-gray-400 hover:text-gray-200 cursor-pointer px-4 py-2 whitespace-nowrap transition duration-150"
+                        onClick={() => setOpenDivisions(false)}
+                      >
+                        {div.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+
+              {/* About & Careers */}
+              <li>
+                <Link
+                  to="/about"
+                  className="text-white hover:text-gray-200 cursor-pointer transition duration-150 font-semibold"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/careers"
+                  className="text-white hover:text-gray-200 cursor-pointer transition duration-150 font-semibold"
+                >
+                  Careers
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* RIGHT COLUMN: Investors & Partners */}
+          {/* Investors & Partners */}
           <div className="text-left">
             <ul className="space-y-2">
-              <li className="text-white font-semibold">Investors & Partners</li>
-              <li className="text-gray-400 hover:text-gray-200 cursor-pointer transition duration-150">Contact Us</li>
+              <li>
+                <Link
+                  to="/investors"
+                  className="text-white hover:text-gray-200 cursor-pointer transition duration-150 font-semibold"
+                >
+                  Investors & Partners
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="text-white hover:text-gray-200 cursor-pointer transition duration-150 font-semibold"
+                >
+                  Contact Us
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
-        {/* BOTTOM SECTION: Copyright and Tagline */}
+        {/* Bottom Section */}
         <div className="flex flex-col md:flex-row justify-between items-center mt-16 pt-6 text-[13px] text-gray-500 border-t border-gray-800">
-          <p className="order-2 md:order-1 mt-3 md:mt-0">@ALL RIGHTS RESERVED, INSPIRUX 2025</p>
+          <p className="order-2 md:order-1 mt-3 md:mt-0">
+            @ALL RIGHTS RESERVED, INSPIRUX 2025
+          </p>
           <p className="flex items-center gap-1 order-1 md:order-2">
             LET’S MAKE YOUR IDEAS TO LIFE <span className="text-red-500">❤</span>
           </p>
         </div>
       </div>
 
-      {/* Large Background Text Section (Gray Background) */}
-      {/* Fluid font size used for maximum responsiveness */}
+      {/* Large Background Text */}
       <div className="bg-[#f2f2f2] overflow-hidden select-none">
         <div className="w-full flex justify-center items-center">
           <h1 className="text-[15vw] sm:text-[12vw] md:text-[10vw] lg:text-[10rem] xl:text-[12rem] 2xl:text-[14rem] font-extrabold text-black leading-none py-10 tracking-tight whitespace-nowrap opacity-20 transition duration-300 hover:opacity-100">
