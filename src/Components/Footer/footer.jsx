@@ -72,12 +72,27 @@ export default function Footer() {
         <hr className="border-gray-800 my-8" />
 
         {/* Email CTA */}
-        <div className="flex justify-center md:justify-end mb-10 mt-6">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold flex items-center gap-2 cursor-pointer hover:text-gray-300 transition duration-150">
-            HELLO@PIXLAGROUP.COM
-            <ArrowUpRight size={38} className="text-white" />
-          </h2>
-        </div>
+       <div className="flex justify-center md:justify-end mb-6 mt-6 px-4">
+  <h2
+    className="
+      text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-4xl 
+      font-semibold 
+      flex items-center gap-2 
+      cursor-pointer 
+      hover:text-gray-300 
+      transition duration-150 
+      whitespace-nowrap
+    "
+  >
+    HELLO@PIXLAGROUP.COM
+    <ArrowUpRight
+      className="text-white"
+      style={{ width: "clamp(20px, 3vw, 38px)", height: "clamp(20px, 3vw, 38px)" }}
+    />
+  </h2>
+</div>
+
+
 
         {/* Footer Columns */}
         <div className="flex flex-col md:flex-row justify-start md:justify-end text-sm leading-relaxed gap-10 md:gap-12 lg:gap-14">
@@ -149,7 +164,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/careers"
+                  to="/"
                   className="text-white hover:text-gray-200 cursor-pointer transition duration-150 font-semibold"
                 >
                   Careers
@@ -163,7 +178,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  to="/investors"
+                  to="/"
                   className="text-white hover:text-gray-200 cursor-pointer transition duration-150 font-semibold"
                 >
                   Investors & Partners
