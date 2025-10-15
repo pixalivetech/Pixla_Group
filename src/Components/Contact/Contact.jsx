@@ -1,12 +1,15 @@
+import { div } from "framer-motion/client";
 import { FaWhatsapp, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col justify-between text-gray-900">
-      <div className="text-center py-10">
-        <h1 className="text-8xl md:text-8xl font-bold">Contact me</h1>
+    <div className="bg-[#f2f2f2]  ">
+     <div className="text-center bg-[#f2f2f2] ">
+        <h1 className="text-5xl md:text-8xl  font-bold">Contact me</h1>
       </div>
-      <div className="max-w-7xl mx-auto px-6 py-6 grid md:grid-cols-2 gap-8">
+    <div className="min-h-screen bg-[#f2f2f2] px-6 md:px-24  py-16 flex flex-col justify-between text-gray-900">
+     
+      <div className="max-w-7xl mx-auto  grid md:grid-cols-2 gap-8">
         <div className="space-y-8">
           <div>
             <h3 className="text-lg font-semibold">PixlaGroup</h3>
@@ -54,15 +57,15 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="bg-black text-white px-6 py-2 mt-2 hover:bg-gray-800 transition-all"
+              className="bg-black text-white px-6 py-2 mt-2 mb-2 hover:bg-gray-800 transition-all"
             >
               Submit
             </button>
           </form>
         </div>
       </div>
-      <footer className="border-t border-gray-200 py-8 text-base">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <footer className="border-t border-gray-200  text-base">
+        <div className=" mx-auto  flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
             <p className="font-bold text-lg">contact@pixlagroup.com</p>
             <p className="text-base">Rajesekar Sundaresan CEO</p>
@@ -87,7 +90,7 @@ const Contact = () => {
                 <FaWhatsapp />
               </a>
               <a
-                href="https://www.instagram.com/"
+                href="https://www.instagram.com/pixla_group/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-pink-600"
@@ -95,7 +98,7 @@ const Contact = () => {
                 <FaInstagram />
               </a>
               <a
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/company/pixla-gold-network/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-700"
@@ -110,6 +113,7 @@ const Contact = () => {
           </div>
         </div>
       </footer>
+    </div>
     </div>
   );
 };
