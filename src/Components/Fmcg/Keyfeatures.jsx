@@ -7,7 +7,7 @@ const Keyfeatures = () => {
         <div className="flex flex-col md:flex-row items-start mt-10 gap-4 md:gap-6">
         <a
           href="#"
-          className="md:w-1/2 text-gray-500 text-sm sm:text-base underline underline-offset-4"
+          className="md:w-1/2 text-gray-500 text-xl md:text-[24px] underline underline-offset-4 font-medium"
         >
           Key Features
         </a>

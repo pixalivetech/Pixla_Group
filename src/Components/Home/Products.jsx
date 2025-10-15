@@ -61,7 +61,7 @@ export default function ProductsServices() {
         {services.map((item, idx) => (
           <div
             key={idx}
-            className="bg-gray-900 rounded-lg overflow-hidden flex flex-col justify-between shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="  overflow-hidden flex flex-col justify-between shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             {/* Icon */}
             <div className="p-4 flex justify-start">
