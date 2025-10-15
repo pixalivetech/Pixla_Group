@@ -7,7 +7,7 @@ const ProductCategories = () => {
       {/* Section Title */}
       <div className="inline-block border-b-2 border-gray-300 mb-8">
         <p className="text-xl sm:text-2xl md:text-xl text-gray-500 font-normal">
-          Our Offerings
+          Our Product Categories
         </p>
       </div>
 
