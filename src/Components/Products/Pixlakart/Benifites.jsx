@@ -1,11 +1,11 @@
 import React from "react";
-import dotsBg from "./../../../assets/Pixla/dots.png";            // dotted overlay
-import businessMan from "./../../../assets/Pixla/p2.png";         // main businessman
-import phoneImg from "./../../../assets/Pixlakart/p3.png";        // phone image
+import dotsBg from "./../../../assets/Pixla/dots.png";     // dotted overlay
+import businessMan from "./../../../assets/Pixla/p2.png"; // main businessman
+import phoneImg from "./../../../assets/Pixlakart/p3.png"; // phone image
 
 const PixlaBenefitsSection = () => {
   return (
-    <section className="background: #F2F2F2; py-16 md:py-24 px-5 md:px-24">
+    <section className=" py-16 md:py-24 px-5 md:px-24">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-20">
         
         {/* ---------- Benefits for Businesses ---------- */}
@@ -13,12 +13,13 @@ const PixlaBenefitsSection = () => {
           
           {/* LEFT IMAGE SECTION */}
           <div className="relative flex justify-center md:justify-start w-full">
-            {/* Dots overlay */}
+            {/* ✅ Dots only behind businessman */}
             <img
               src={dotsBg}
-              alt="dots"
-              className="absolute top-[-28px] left-[-28px] w-[120px] md:w-[210px] z-10 opacity-80"
+              alt="dots background"
+              className="absolute top-[-30px] left-[-30px] w-[120px] md:w-[210px] opacity-80 z-10"
             />
+
             {/* Businessman main image */}
             <img
               src={businessMan}
@@ -67,19 +68,12 @@ const PixlaBenefitsSection = () => {
             </ul>
           </div>
 
-          {/* RIGHT IMAGE SECTION */}
-          <div className="flex justify-center md:justify-end">
+          {/* RIGHT IMAGE SECTION (❌ No dots here) */}
+          <div className="flex justify-center md:justify-end relative">
             <img
               src={phoneImg}
               alt="Pixla phone"
-              className="w-[200px] md:w-[300px] object-contain rounded-md shadow-md"
-            />
-
-            {/* Optional dots decoration */}
-            <img
-              src={dotsBg}
-              alt="dots"
-              className="absolute bottom-[-20px] right-[-20px] w-[100px] md:w-[160px] opacity-60 z-10"
+              className="w-[200px] md:w-[300px] object-contain rounded-md shadow-md relative z-20"
             />
           </div>
         </div>
