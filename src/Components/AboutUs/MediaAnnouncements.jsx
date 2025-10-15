@@ -1,130 +1,125 @@
-import React from 'react';
-import { User, Heart, Eye } from 'lucide-react'; // Icons for the social metrics
+import React from "react";
+import { UserRound, MessageCircleMore, Zap } from "lucide-react";
 import SmallImg from "./../../assets/AboutUs/s1.png";
 import BigImg from "./../../assets/AboutUs/s2.png";
-import LargeImg from "./../../assets/AboutUs/large.webp"
+import LargeImg from "./../../assets/AboutUs/large.webp";
 
-// --- MOCK DATA ---
-const articlesData = [
-  // ... (Data for AnnouncementCard remains the same)
-  {
-    id: 1,
-    category: "POLITICS",
-    title: "CFIF Leads Coalition Urging Congress to Support the Save Local Business",
-    description: "Explore articles, thought leadership posts, and industry insights from Pixla Group. Learn about trends, innovation, and business strategies shaping our ecosystem.",
-    imageSrc: SmallImg, 
-    author: "Somu, K7",
-    likes: "10",
-    views: "1.4k"
-  },
-  {
-    id: 2,
-    category: "POLITICS",
-    title: "CFIF Leads Coalition Urging Congress to Support the Save Local Business",
-    description: "Explore articles, thought leadership posts, and industry insights from Pixla Group. Learn about trends, innovation, and business strategies shaping our ecosystem.",
-    imageSrc: BigImg, 
-    author: "Somu, K7",
-    likes: "10",
-    views: "1.4k"
-  },
-];
-
-const featuredArticle = {
-  caption: "The Beginning of Pixla Kalam Foundation is the vision of Mr. Rajasekar Sundaresan, CEO, Pixla Group",
-  imageSrc: LargeImg,
-};
-
-// --- ANNOUNCEMENT CARD COMPONENT (Remains Unchanged) ---
-const AnnouncementCard = ({ category, title, description, imageSrc, author, likes, views }) => (
-  <div className="flex flex-col pt-8 first:pt-0 ">
-    <div className="text-xs md:text-[20px] font-medium text-[#000000] uppercase mb-2 tracking-wider">
-      {category}
-    </div>
-    <div className="flex space-x-2">
-      <div className="flex-1">
-        <h3 className="text-base md:text-[20px] font-bold leading-relaxed mt-6 text-[#000000] mb-2 cursor-pointer hover:text-gray-700">
-          {title}
-        </h3>
-        <p className="text-[#7A7A7A] text-sm md:text-[20px] mb-3 hidden sm:block">
-          {description}
-        </p>
-        <div className="flex items-center text-xs md:text-[16px] text-[#000000] space-x-4">
-          <span className="flex items-center space-x-1">
-            <User className="w-4 h-4" />
-            <span>{author}</span>
-          </span>
-          <span className="flex items-center space-x-1">
-            <Heart className="w-4 h-4" />
-            <span>{likes}</span>
-          </span>
-          <span className="flex items-center space-x-1">
-            <Eye className="w-4 h-4" />
-            <span>{views}</span>
-          </span>
-        </div>
-      </div>
-      <div className="w-24 h-24 flex-shrink-0 ml-0 md:ml-4">
-        <img
-          src={imageSrc}
-          alt={title}
-          className="w-full h-full object-cover rounded-sm "
-        />
-      </div>
-    </div>
-  </div>
-);
-
-// --- MEDIA ANNOUNCEMENTS MAIN SECTION ---
 const MediaAnnouncements = () => {
+  const articlesData = [
+    {
+      id: 1,
+      category: "POLITICS",
+      title:
+        "CFIF Leads Coalition Urging Congress to Support the Save Local Business",
+      description:
+        "Explore articles, thought leadership posts, and industry insights from Pixla Group. Learn about trends, innovation, and business strategies shaping our ecosystem.",
+      imageSrc: SmallImg,
+      author: "Somu, K7",
+      likes: "10",
+      views: "1.4k",
+    },
+    {
+      id: 2,
+      category: "POLITICS",
+      title:
+        "CFIF Leads Coalition Urging Congress to Support the Save Local Business",
+      description:
+        "Explore articles, thought leadership posts, and industry insights from Pixla Group. Learn about trends, innovation, and business strategies shaping our ecosystem.",
+      imageSrc: BigImg,
+      author: "Somu, K7",
+      likes: "10",
+      views: "1.4k",
+    },
+  ];
+
+  const featuredArticle = {
+    caption:
+      "The Beginning of Pixla Kalam Foundation is the vision of Mr. Rajasekar Sundaresan, CEO, Pixla Group",
+    imageSrc: LargeImg,
+  };
+
   return (
-    <div className=" px-6 md:px-24  py-16 bg-white font-sans mt-20">
-      
-      {/* --- MODIFIED HEADER SECTION ---
-        Using flex and justify-between to place the title left and the text right.
-      */}
-      <div className="mb-10 flex flex-col md:flex-row md:items-start md:justify-between space-y-4 md:space-y-0">
-        
-        {/* Title (Left Side) */}
-        <h1 className="text-xl  md:text-[24px] font-medium text-[#7A7A7A] inline-block border-b-2 border-gray-300 pb-1 flex-shrink-0">
+    <section className=" bg-[#F2F2F2] px-6 md:px-24 py-16 font-sans">
+      {/* Header */}
+      <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start mb-12 space-y-4 lg:space-y-0">
+        <h2 className="text-lg sm:text-xl lg:text-[22px] font-medium text-[#7A7A7A] border-b-2 border-gray-300 pb-1 whitespace-nowrap">
           Media & Announcements
-        </h1>
-        
-        {/* Paragraph (Right Side) */}
-        <p className="text-base md:text-[24px] text-[#000000] leading-relaxed   md:w-3/5 lg:w-1/2 md:text-left">
-          Stay updated with the latest happenings, press coverage, and insights from Pixla Group. Our News & Media section highlights our growth, innovations, and impact across industries.
+        </h2>
+
+        <p className="text-sm sm:text-base lg:text-[20px] text-[#000000] leading-relaxed lg:max-w-[55%]">
+          Stay updated with the latest happenings, press coverage, and insights
+          from Pixla Group. Our News & Media section highlights our growth,
+          innovations, and impact across industries.
         </p>
       </div>
 
-      {/* Content Grid (Remains Unchanged) */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-16">
-        
-        {/* Left Column: News/Announcement List */}
-        <div className="lg:col-span-1 border-b lg:border-none lg:divide-y divide-gray-200">
-          {articlesData.map(article => (
-            <AnnouncementCard key={article.id} {...article} />
+      {/* Main Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.3fr] gap-8 xl:gap-10">
+        {/* Left Column */}
+        <div className="divide-y divide-gray-200 space-y-6">
+          {articlesData.map((article) => (
+            <div
+              key={article.id}
+              className="flex flex-col py-6 space-y-4 transition-all duration-300 hover:scale-[1.01]"
+            >
+              {/* Category + Title + Image Row */}
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                {/* Left Text */}
+                <div className="flex flex-col justify-start flex-1">
+                  <div className="text-xs sm:text-sm md:text-base lg:text-[18px] font-semibold text-black uppercase tracking-wide mb-1">
+                    {article.category}
+                  </div>
+                  <h3 className="text-sm sm:text-base md:text-[17px] lg:text-[18px] font-medium text-black leading-snug cursor-pointer hover:text-gray-700 mt-1">
+                    {article.title}
+                  </h3>
+                </div>
+
+                {/* Right Image */}
+                <div className="w-full sm:w-[180px] md:w-[200px] lg:w-[213px] h-auto sm:h-[110px] md:h-[130px] lg:h-[136px] flex-shrink-0">
+                  <img
+                    src={article.imageSrc}
+                    alt={article.title}
+                    className="w-full h-full object-cover shadow-sm"
+                  />
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="text-[#7A7A7A] text-sm sm:text-base lg:text-[17px] leading-relaxed">
+                {article.description}
+              </p>
+
+              {/* Author + Comments + Views */}
+              <div className="flex flex-wrap items-center text-xs sm:text-sm lg:text-[16px] text-[#000000] space-x-4">
+                <span className="flex items-center space-x-1">
+                  <UserRound className="w-4 h-4 cursor-pointer" />
+                  <span>{article.author}</span>
+                </span>
+                <span className="flex items-center space-x-1">
+                  <MessageCircleMore className="w-4 h-4 cursor-pointer" />
+                  <span>{article.likes}</span>
+                </span>
+                <span className="flex items-center space-x-1">
+                  <Zap className="w-4 h-4 cursor-pointer" />
+                  <span>{article.views}</span>
+                </span>
+              </div>
+            </div>
           ))}
-          <div className="h-4 border-b border-gray-200 lg:hidden"></div>
         </div>
 
-        {/* Right Column: Featured Article */}
-        <div className="lg:col-span-2 mt-8 lg:mt-0 ml-0 lg:ml-25">
-          <div className="bg-white">
-            {/* <div className="p-4 bg-gray-50 border-y border-gray-200">
-              <p className="text-sm text-gray-800 font-semibold">
-                {featuredArticle.caption}
-              </p>
-            </div> */}
-            <div className="relative">
-              <img
-                src={featuredArticle.imageSrc}
-                alt="Featured Announcement"
-                className="w-full h-auto object-cover max-w-[620px] max-h-[658px]"
-              />
-            </div>
+        {/* Right Column */}
+        <div className="flex flex-col items-start lg:items-end">
+          <div className="w-full max-w-[620px]">
+            <img
+              src={featuredArticle.imageSrc}
+              alt="Featured"
+              className="w-full object-cover shadow-lg"
+            />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

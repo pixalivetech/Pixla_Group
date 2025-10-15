@@ -2,11 +2,11 @@ import React from "react";
 
 const WhoWeAre = () => {
   return (
-    <section className=" bg-[#f5f5f5] px-6 md:px-24  py-16 flex justify-center font-Open Sans">
-      <div className=" flex flex-col md:flex-row items-start justify-between">
+    <section className=" bg-[#F2F2F2] px-6 md:px-24  py-16 flex justify-center">
+      <div className="  flex flex-col md:flex-row items-start justify-between">
         {/* Left Section - Title */}
-        <div className="md:w-1/3 mb-6 md:mb-0">
-          <h2 className="text-[#7A7A7A] text-[18px] font-medium border-b border-gray-400 inline-block pb-1">
+        <div className="md:w-1/2 mb-6 md:mb-0">
+          <h2 className="text-gray-700 text-[18px] md:text-[21px] font-medium border-b border-gray-400 inline-block pb-1">
             Who We Are
           </h2>
         </div>
