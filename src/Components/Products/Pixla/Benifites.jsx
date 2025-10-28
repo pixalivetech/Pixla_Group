@@ -5,7 +5,7 @@ import phoneImg from "./../../../assets/Pixla/p3.png";
 
 const PixlaBenefitsSection = () => {
   return (
-    <section className="background: #F2F2F2; py-16 md:py-24 px-5 md:px-24">
+    <section className="background: #F2F2F2; px-6 md:px-24  py-16">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-20">
         {/* ---------- Benefits for Businesses ---------- */}
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-14">
@@ -81,12 +81,7 @@ const PixlaBenefitsSection = () => {
               className="relative w-[240px] md:w-[360px] rounded-md object-cover shadow-md z-20"
             />
 
-            {/* dotted decoration */}
-            <img
-              src={dotsBg}
-              alt="dots"
-              className="absolute bottom-[-20px] right-[-20px] w-[100px] md:w-[160px] opacity-60 z-10"
-            />
+           
           </div>
         </div>
       </div>

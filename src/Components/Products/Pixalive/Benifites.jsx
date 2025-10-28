@@ -88,7 +88,7 @@ const PixlaBenefitsSection = () => {
           </h2>
 
           {/* IMAGE + TEXT Row */}
-          <div className="flex flex-col md:flex-row items-center md:items-start md:gap-[4px] gap-10">
+          <div className="flex flex-col md:flex-row items-center md:items-start md:gap-[40px] gap-10">
             {/* LEFT: Phone Image */}
             <div className="relative flex justify-center md:justify-start items-start h-[220px] md:h-[260px]">
               <img

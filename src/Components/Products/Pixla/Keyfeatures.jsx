@@ -2,7 +2,7 @@ import React from "react";
 
 const PixlaKeyFeatures = () => {
   return (
-    <section className=" px-6 md:px-24 py-16 flex justify-center">
+    <section className=" px-6 md:px-24  py-16 flex justify-center">
       <div className="max-w-[1280px] w-full mx-auto flex flex-col md:flex-row md:gap-44">
         
         {/* Left side title */}
