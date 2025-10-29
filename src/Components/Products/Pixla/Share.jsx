@@ -3,9 +3,16 @@ import phoneImage from "./../../../assets/Pixla/a6.png"; // your full phone-with
  
 export default function DownloadApp() {
   return (
-    <div className="bg-[#f2f2f2] px-6 md:px-24  py-16 flex justify-center ">
-      {/* Outer Box */}
-      <div className="bg-gradient-to-b from-[#fff7ea] to-white  shadow-lg flex flex-col md:flex-row items-center justify-between   ">
+    <div className=" bg-[#f2f2f2]  px-6 md:px-24 py-16;">
+      {/* Outer Box with linear gradient */}
+      <div
+  className="shadow-lg flex flex-col md:flex-row items-center justify-between px-6 md:px-24 py-16"
+  style={{
+    background: "linear-gradient(180deg, #fff7ea 0%, #ffffff 46.63%, #fff7ea 100%)",
+  }}
+>
+
+
         
         {/* Left Section */}
         <div className="w-full md:w-1/2 text-center md:text-left space-y-6">

@@ -5,8 +5,8 @@ import phoneImg from "./../../../assets/Pixla/p3.png";
 
 const PixlaBenefitsSection = () => {
   return (
-    <section className="background: #F2F2F2; px-6 md:px-24  py-16">
-      <div className="max-w-[1200px] mx-auto flex flex-col gap-20">
+    <section className="bg-[#f2f2f2] py-16 px-6  md:px-24">
+      <div className="  flex flex-col gap-24 md:gap-32">
         {/* ---------- Benefits for Businesses ---------- */}
         <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-14">
           {/* LEFT IMAGE SECTION */}
