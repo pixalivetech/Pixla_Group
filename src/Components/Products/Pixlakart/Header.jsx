@@ -1,19 +1,28 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaStar } from "react-icons/fa";
 import pixlakartBg from "./../../../assets/Pixla/p2.png";
 
 const PixlakartHero = () => {
+  const navigate = useNavigate(); // ✅ For page navigation
+
   return (
     <section
       className="relative w-full h-screen flex items-center justify-center text-white bg-cover bg-center"
       style={{ backgroundImage: `url(${pixlakartBg})` }}
     >
+      {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-70"></div>
 
-      <button className="absolute top-6 left-6 bg-white text-black p-2 rounded-full shadow-md hover:opacity-80 transition">
+      {/* Back Arrow Button */}
+      <button
+        onClick={() => navigate("/")} // ✅ Goes to "/" page when clicked
+        className="absolute top-6 left-6 bg-white text-black p-2 rounded-full shadow-md hover:opacity-80 transition cursor-pointer"
+      >
         <FaArrowLeft size={20} />
       </button>
 
+      {/* Center Content */}
       <div className="relative z-10 text-center px-6 max-w-3xl">
         <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4">
           PIXLAKART – E-COMMERCE PLATFORM
@@ -23,6 +32,7 @@ const PixlakartHero = () => {
           and consumers with product discovery, digital retail, and rewards.
         </p>
 
+        {/* Store Buttons */}
         <div className="flex justify-center gap-4 mb-6 flex-wrap">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
@@ -36,6 +46,7 @@ const PixlakartHero = () => {
           />
         </div>
 
+        {/* Rating Section */}
         <div className="flex flex-col items-center space-y-1">
           <div className="flex items-center text-3xl font-semibold">
             4.5
