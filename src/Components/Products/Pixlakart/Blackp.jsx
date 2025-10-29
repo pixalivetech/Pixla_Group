@@ -4,8 +4,7 @@ import pixaliveLogo from "./../../../assets/Pixla/a5.png";
  
 const PixlaHeroSection = () => {
   return (
-    <section className="bg-black text-white flex flex-col items-center justify-center min-h-screen px-6 py-14 text-center">
-      {/* Logo */}
+<section className="bg-black text-white flex flex-col items-center justify-center min-h-screen px-6 py-16 md:px-24 text-center">      {/* Logo */}
       <img
         src={pixaliveLogo}
         alt="Pixalive Logo"

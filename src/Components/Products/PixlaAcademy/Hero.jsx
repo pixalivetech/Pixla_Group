@@ -11,8 +11,7 @@ const PixlaAcademyShowcase = () => {
   return (
     <section
       ref={ref}
-      className="relative  py-20 px-6 flex flex-col items-center overflow-hidden"
-    >
+      className="relative  py-16 px-6  md:px-24 flex flex-col items-center overflow-hidden"    >
       {/* Background Curves */}
       <img
         src={curveBg}

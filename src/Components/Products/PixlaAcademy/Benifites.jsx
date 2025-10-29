@@ -4,8 +4,8 @@ import dotsBg from "./../../../assets/pixlaAcademy/dots.png";
 
 const FranchiseOpportunitiesSection = () => {
   return (
-    <section className=" py-20 px-6 md:px-24">
-      <div className="max-w-[1280px] mx-auto">
+    <section className="bg-[#f2f2f2] py-16 px-6  md:px-24">
+      <div className="  flex flex-col gap-24 md:gap-32">
 
         {/* ---------- Franchise Opportunities Section (FIXED ALIGNMENT) ---------- */}
         {/* Use items-start to ensure content is aligned from the top of the grid cell */}

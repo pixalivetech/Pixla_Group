@@ -3,10 +3,10 @@ import phoneImage from "./../../../assets/Pixla/a6.png"; // your full phone-with
  
 export default function DownloadApp() {
   return (
-    <div className="flex justify-center mb-9 background: #F2F2F2;">
+    <div className=" bg-[#f2f2f2]  px-6 md:px-24 py-16;">
       {/* Outer Box with linear gradient */}
       <div
-        className="shadow-lg flex flex-col md:flex-row items-center justify-between max-w-7xl w-[75%] px-6 md:px-24 py-16"
+        className="shadow-lg flex flex-col md:flex-row items-center justify-between   px-6 md:px-24 py-16"
         style={{
           background: "linear-gradient(180deg, #9EDAFC 0%, #FFFFFF 46.63%, #9EDAFC 100%)",
         }}
