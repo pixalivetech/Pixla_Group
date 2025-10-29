@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import Hlogo from "./../../assets/logo.png"; 
+import Hlogo from "./../../assets/Logo.jpg"; 
 
 // --- Icons ---
 const MenuIcon = (props) => (
