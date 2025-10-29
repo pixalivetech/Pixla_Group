@@ -1,63 +1,48 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import { FaWhatsapp, FaInstagram, FaLinkedin } from "react-icons/fa";
 
-export default function ContactSection() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+const Contact = () => {
+  const form = useRef();
 
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
-    setLoading(true);
 
-    try {
-      const response = await fetch("https://your-production-backend.com/send-mail", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+    emailjs
+      .sendForm(
+        "service_0cp6x3q", // Your Service ID
+        "template_ckgxssb", // Admin template
+        form.current,
+        "rJ1Wh7Z8mtYIaH7vc" // Public key
+      )
+      .then(() => {
+        console.log("✅ Sent to Admin");
 
-      const result = await response.json();
-      alert(result.message || "✅ Message sent successfully!");
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        message: "",
+        return emailjs.sendForm(
+          "service_0cp6x3q",
+          "template_s5k2746", // User auto-reply template
+          form.current,
+          "rJ1Wh7Z8mtYIaH7vc"
+        );
+      })
+      .then(() => {
+        alert("✅ Message sent successfully! Check your email for confirmation.");
+        form.current.reset();
+      })
+      .catch((error) => {
+        console.error("❌ Error:", error.text);
+        alert("❌ Failed to send message. Please try again later.");
       });
-    } catch (error) {
-      console.error("Error:", error);
-      alert("❌ Something went wrong!");
-    } finally {
-      setLoading(false);
-    }
   };
 
   return (
     <div className="bg-[#f2f2f2]">
-      {/* Header */}
       <div className="text-center bg-[#f2f2f2]">
         <h1 className="text-5xl md:text-8xl font-bold">Contact me</h1>
       </div>
 
-      {/* Main Container */}
       <div className="min-h-screen bg-[#f2f2f2] px-6 md:px-24 py-16 flex flex-col justify-between text-gray-900">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8">
-          
           {/* Left Info */}
           <div className="space-y-8">
             <div>
@@ -72,74 +57,60 @@ export default function ContactSection() {
           </div>
 
           {/* Right Form */}
-          <form onSubmit={handleSubmit} className="space-y-5">
-            {/* Name fields */}
+          <form ref={form} onSubmit={sendEmail} className="space-y-5">
             <div>
               <label className="text-sm font-semibold">Name (required)</label>
               <div className="flex gap-3 mt-1">
                 <input
-                  name="firstName"
+                  name="first_name"
                   type="text"
                   required
-                  value={formData.firstName}
-                  onChange={handleChange}
                   placeholder="First Name"
                   className="w-1/2 border-b border-gray-300 focus:border-black outline-none py-2 bg-transparent text-base"
                 />
                 <input
-                  name="lastName"
+                  name="last_name"
                   type="text"
-                  value={formData.lastName}
-                  onChange={handleChange}
                   placeholder="Last Name"
                   className="w-1/2 border-b border-gray-300 focus:border-black outline-none py-2 bg-transparent text-base"
                 />
               </div>
             </div>
 
-            {/* Email */}
             <input
               name="email"
               type="email"
               required
-              value={formData.email}
-              onChange={handleChange}
               placeholder="Email ID"
               className="w-full border-b border-gray-300 focus:border-black outline-none py-2 bg-transparent text-base"
             />
 
-            {/* Phone */}
             <input
               name="phone"
               type="tel"
-              value={formData.phone}
-              onChange={handleChange}
               placeholder="Phone No"
               className="w-full border-b border-gray-300 focus:border-black outline-none py-2 bg-transparent text-base"
             />
 
-            {/* Message */}
             <textarea
               name="message"
               required
-              value={formData.message}
-              onChange={handleChange}
               placeholder="Message"
               className="w-full border-b border-gray-300 focus:border-black outline-none py-2 bg-transparent text-base"
               rows="3"
             ></textarea>
 
-            {/* Submit */}
             <button
               type="submit"
-              disabled={loading}
               className="bg-black text-white px-6 py-2 mt-2 mb-2 hover:bg-gray-800 transition-all"
             >
-              {loading ? "Sending..." : "Submit"}
+              Submit
             </button>
           </form>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default Contact;
