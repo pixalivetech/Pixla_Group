@@ -12,7 +12,7 @@ const AboutUsSection = () => {
       <div className=" flex flex-col md:flex-row md:items-start md:justify-between gap-10">
         {/* LEFT SIDE – "About Us – Pixla Group" */}
         <div className="w-full md:w-1/3 flex md:justify-start">
-          <p className="text-gray-400 text-lg md:text-xl underline underline-offset-4 decoration-gray-500 whitespace-nowrap">
+          <p className="text-gray-400 text-lg md:text-[24px] underline underline-offset-4 decoration-gray-500 whitespace-nowrap">
             About Us – Pixla Group
           </p>
         </div>
@@ -63,7 +63,7 @@ const AboutUsSection = () => {
               Our Values
             </h2>
             <p className="text-gray-300 text-[15px] leading-relaxed max-w-[400px]">
-              • Focused on innovation, trust, excellence, collaboration, and
+               Focused on innovation, trust, excellence, collaboration, and
               sustainability, we create future-ready solutions, build lasting
               relationships, uphold high standards, grow together with
               stakeholders, and drive long-term impact.
@@ -81,7 +81,7 @@ const AboutUsSection = () => {
               Our Mission
             </h2>
             <p className="text-gray-300 text-[15px] leading-relaxed max-w-[400px]">
-              • We deliver value-driven solutions across industries, create
+               We deliver value-driven solutions across industries, create
               sustainable growth opportunities, and expand with innovation and
               trust at the core.
             </p>
