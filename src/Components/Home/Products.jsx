@@ -50,7 +50,7 @@ export default function ProductsServices() {
       icon: ShortVideoIcon,
       title: "Pixla (Short Video)",
       description:
-        "A dynamic short video platform empowering creators to share, engage, and grow.",
+        "A dynamic short video platform empowering creators to share, engage, and grow.Where creativity meets opportunity — anytime.",
       img: Card1,
       path: "/pixla",
     },
