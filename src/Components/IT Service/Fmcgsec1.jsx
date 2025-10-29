@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
  
 const Fmcgsec1 = () => {
   return (
-    <section className="bg-[#f6f6f6] px-6 md:px-24 py-16">
+    <section className="bg-[#f2F2F2] px-6 md:px-24 py-16">
       {/* Top Section */}
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-10">
         {/* Heading */}
@@ -71,7 +71,7 @@ const Fmcgsec1 = () => {
               />
             </svg>
           </button> */}
-         <button className="flex items-center gap-2 bg-white text-black px-5 py-5 mb-4 rounded-full hover:bg-gray-800 transition">
+         <button className="flex items-center gap-2 bg-white text-black px-5 py-5 mb-4 rounded-full hover:bg-gray-300 transition">
       <FaArrowRight className="text-xl rotate-320" />
     </button>
         </div>  

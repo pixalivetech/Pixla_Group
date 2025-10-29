@@ -73,7 +73,7 @@ const Fmcgsec1 = () => {
               />
             </svg>
           </button> */}
-         <button className="flex items-center gap-2 bg-white text-black px-5 py-5 mb-4 rounded-full hover:bg-gray-800 transition">
+         <button className="flex items-center gap-2 bg-white text-black px-5 py-5 mb-4 rounded-full hover:bg-gray-300 transition">
       <FaArrowRight className="text-xl rotate-320" />
     </button>
         </div>  

@@ -45,6 +45,7 @@ export default function ProductsServices() {
       description:
         "A dynamic short video platform empowering creators to share, engage, and grow.",
       img: Card1,
+      path: "/pixla", // route path
     },
     {
       icon: LiveStreamingIcon,
@@ -52,6 +53,7 @@ export default function ProductsServices() {
       description:
         "An interactive live streaming platform connecting creators and audiences in real time.",
       img: Card2,
+      path: "/pixalive",
     },
     {
       icon: AffiliateIcon,
@@ -59,6 +61,7 @@ export default function ProductsServices() {
       description:
         "Affiliate marketing made simple – enabling businesses and individuals to earn through smart referrals.",
       img: Card3,
+      path: "/pixclick",
     },
     {
       icon: EcommerceIcon,
@@ -66,6 +69,7 @@ export default function ProductsServices() {
       description:
         "A next-generation e-commerce platform designed to simplify online shopping and empower sellers.",
       img: Card4,
+      path: "/pixlakart",
     },
     {
       icon: AcademyIcon,
@@ -73,6 +77,7 @@ export default function ProductsServices() {
       description:
         "A global learning hub empowering students and professionals with industry-ready skills, innovation, and real-world knowledge.",
       img: Card5,
+      path: "/pixlaacademy"
     },
   ];
 
@@ -83,7 +88,6 @@ export default function ProductsServices() {
         <p className="text-gray-400 text-sm md:text-lg inline-block border-b border-gray-400 font-medium mb-1 cursor-pointer">
           Our Products & Services
         </p>
-
         <h2 className="text-white text-xl md:text-2xl font-semibold max-w-2xl text-left md:text-left">
           Reimagining how brands connect with customers through data-driven
           retail advertising.
