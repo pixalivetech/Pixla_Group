@@ -8,8 +8,8 @@ const PixlaBenefitsSection = () => {
   const ListStyle = { listStyleType: "none" };
 
   return (
-    <section className="bg-white py-20 px-4 sm:px-8 md:px-24">
-      <div className="max-w-[1280px] mx-auto flex flex-col gap-24 md:gap-32">
+    <section className="bg-[#f2f2f2] py-16 px-6  md:px-24">
+      <div className="  flex flex-col gap-24 md:gap-32">
         {/* ------------------------------------- Benefits for Businesses ------------------------------------- */}
         <div className="flex flex-col gap-8">
           {/* Title */}

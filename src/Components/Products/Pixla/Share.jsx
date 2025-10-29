@@ -3,9 +3,9 @@ import phoneImage from "./../../../assets/Pixla/a6.png"; // your full phone-with
  
 export default function DownloadApp() {
   return (
-    <div className="background: #F2F2F2; flex justify-center mb-9">
+    <div className="bg-[#f2f2f2] px-6 md:px-24  py-16 flex justify-center ">
       {/* Outer Box */}
-      <div className="bg-gradient-to-b from-[#fff7ea] to-white  shadow-lg flex flex-col md:flex-row items-center justify-between max-w-7xl w-[75%] px-6 md:px-24  py-16 ">
+      <div className="bg-gradient-to-b from-[#fff7ea] to-white  shadow-lg flex flex-col md:flex-row items-center justify-between   ">
         
         {/* Left Section */}
         <div className="w-full md:w-1/2 text-center md:text-left space-y-6">

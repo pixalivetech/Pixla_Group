@@ -50,7 +50,7 @@ const PixlaGroup = () => {
   };
  
   return (
-    <div className="background: #F2F2F2; min-h-screen flex flex-col items-center px-6 md:px-24  py-16">
+    <div className="bg-[#f2F2F2]  flex flex-col items-center px-6 md:px-24  py-16">
       {/* Header */}
       <div className="text-center mb-12">
         <img src={pixlaLogo} alt="Pixla Group Logo" className="w-20 h-20 mx-auto mb-4" />
