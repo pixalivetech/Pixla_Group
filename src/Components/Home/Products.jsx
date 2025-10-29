@@ -1,16 +1,43 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import ShortVideoIcon from "./../../assets/Home/picon1.png";
 import LiveStreamingIcon from "./../../assets/Home/picon2.png";
 import AffiliateIcon from "./../../assets/Home/picon3.png";
 import EcommerceIcon from "./../../assets/Home/picon4.png";
+import AcademyIcon from "./../../assets/Home/picon5.png"; // Pixla Academy logo
 
-// 👇 4 different card images
+// 👇 Card images
 import Card1 from "./../../assets/Home/pcard1.png";
 import Card2 from "./../../assets/Home/pcard1.png";
 import Card3 from "./../../assets/Home/pcard1.png";
 import Card4 from "./../../assets/Home/pcard1.png";
+import Card5 from "./../../assets/Home/pcard1.png";
 
 export default function ProductsServices() {
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    let direction = 1;
+
+    const scrollAnimation = () => {
+      if (scrollContainer) {
+        scrollContainer.scrollLeft += direction * 1; // scroll speed
+        if (
+          scrollContainer.scrollLeft + scrollContainer.clientWidth >=
+          scrollContainer.scrollWidth
+        ) {
+          direction = -1;
+        } else if (scrollContainer.scrollright <= 0) {
+          direction = 1;
+        }
+      }
+      requestAnimationFrame(scrollAnimation);
+    };
+
+    requestAnimationFrame(scrollAnimation);
+    return () => cancelAnimationFrame(scrollAnimation);
+  }, []);
+
   const services = [
     {
       icon: ShortVideoIcon,
@@ -40,54 +67,64 @@ export default function ProductsServices() {
         "A next-generation e-commerce platform designed to simplify online shopping and empower sellers.",
       img: Card4,
     },
+    {
+      icon: AcademyIcon,
+      title: "Pixla Academy",
+      description:
+        "A global learning hub empowering students and professionals with industry-ready skills, innovation, and real-world knowledge.",
+      img: Card5,
+    },
   ];
 
   return (
-    <section className="bg-black text-white px-6 md:px-24 py-16 md:py-32 font-sans">
+    <section className="bg-black text-white pl-6 md:pl-24 py-16 md:py-32 font-sans overflow-hidden">
       {/* Header */}
-       <div className="mb-12 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        {/* Left side */}
-        <p className="text-gray-400 text-sm md:text-lg inline-block border-b border-gray-400 font-medium mb-1 cursor-pointer">Our Products & Services</p>
+      <div className="mb-12 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <p className="text-gray-400 text-sm md:text-lg inline-block border-b border-gray-400 font-medium mb-1 cursor-pointer">
+          Our Products & Services
+        </p>
 
-        {/* Right side */}
         <h2 className="text-white text-xl md:text-2xl font-semibold max-w-2xl text-left md:text-left">
           Reimagining how brands connect with customers through data-driven
           retail advertising.
         </h2>
       </div>
-<br />
-      {/* Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+
+      {/* Scrollable Cards */}
+      <div
+        ref={scrollRef}
+        className="flex gap-8 overflow-x-auto scrollbar-hide scroll-smooth pb-6"
+      >
         {services.map((item, idx) => (
           <div
             key={idx}
-            className="  overflow-hidden flex flex-col justify-between shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="flex-shrink-0 w-72 md:w-80  rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             {/* Icon */}
-            <div className="p-4 flex justify-start">
-              <img src={item.icon} alt={item.title} className="w-10 h-10" /><br /><br />
-              
+            <div className="p-5 flex justify-start">
+              <img src={item.icon} alt={item.title} className="w-12 h-12" />
             </div>
-              <h3 className="text-white font-semibold text-md mb-2 px-4">
-                {item.title}
-              </h3>
+
+            {/* Title */}
+            <h3 className="text-white font-semibold text-lg mb-2 px-5">
+              {item.title}
+            </h3>
+
             {/* Image */}
             <img
               src={item.img}
               alt={item.title}
-              className="w-full h-40 object-cover"
+              className="w-full h-48 object-cover"
             />
 
-            {/* Content */}
-            <div className="p-4 flex flex-col flex-grow">
-              
-              <p className="text-gray-300 text-sm flex-grow">
+            {/* Description + Button */}
+            <div className="p-5 flex flex-col flex-grow">
+              <p className="text-gray-300 text-sm flex-grow leading-relaxed">
                 {item.description}
               </p>
 
-              {/* Explore Button */}
-              <div className="mt-4">
-                <button className="bg-white text-black text-sm px-4 py-2 w-full flex justify-center items-center gap-2 hover:bg-gray-200 transition-colors">
+              <div className="mt-5">
+                <button className="bg-white text-black text-sm px-4 py-2 w-full flex justify-center items-center gap-2 hover:bg-gray-200 transition-all">
                   Explore <span className="text-black">↗</span>
                 </button>
               </div>
@@ -95,6 +132,17 @@ export default function ProductsServices() {
           </div>
         ))}
       </div>
+
+      {/* Hide Scrollbar CSS */}
+      <style>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </section>
   );
 }
