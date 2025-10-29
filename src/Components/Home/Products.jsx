@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ShortVideoIcon from "./../../assets/Home/picon1.png";
 import LiveStreamingIcon from "./../../assets/Home/picon2.png";
 import AffiliateIcon from "./../../assets/Home/picon3.png";
 import EcommerceIcon from "./../../assets/Home/picon4.png";
-import AcademyIcon from "./../../assets/Home/picon5.png"; // Pixla Academy logo
+import AcademyIcon from "./../../assets/Home/picon5.png";
 
 // 👇 Card images
 import Card1 from "./../../assets/Home/pcard1.png";
@@ -14,29 +15,35 @@ import Card5 from "./../../assets/Home/pcard1.png";
 
 export default function ProductsServices() {
   const scrollRef = useRef(null);
+  const navigate = useNavigate();
+  const [isPaused, setIsPaused] = useState(true); // 👈 Start paused (no scroll until mouse leaves)
 
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     let direction = 1;
+    let animationFrame;
 
     const scrollAnimation = () => {
-      if (scrollContainer) {
-        scrollContainer.scrollLeft += direction * 1; // scroll speed
+      if (scrollContainer && !isPaused) {
+        scrollContainer.scrollLeft += direction * 1.2; // scroll speed
+
+        // Reverse direction at edges
         if (
           scrollContainer.scrollLeft + scrollContainer.clientWidth >=
           scrollContainer.scrollWidth
         ) {
           direction = -1;
-        } else if (scrollContainer.scrollright <= 0) {
+        } else if (scrollContainer.scrollLeft <= 0) {
           direction = 1;
         }
       }
-      requestAnimationFrame(scrollAnimation);
+      animationFrame = requestAnimationFrame(scrollAnimation);
     };
 
-    requestAnimationFrame(scrollAnimation);
-    return () => cancelAnimationFrame(scrollAnimation);
-  }, []);
+    animationFrame = requestAnimationFrame(scrollAnimation);
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [isPaused]);
 
   const services = [
     {
@@ -45,7 +52,7 @@ export default function ProductsServices() {
       description:
         "A dynamic short video platform empowering creators to share, engage, and grow.",
       img: Card1,
-      path: "/pixla", // route path
+      path: "/pixla",
     },
     {
       icon: LiveStreamingIcon,
@@ -77,7 +84,7 @@ export default function ProductsServices() {
       description:
         "A global learning hub empowering students and professionals with industry-ready skills, innovation, and real-world knowledge.",
       img: Card5,
-      path: "/pixlaacademy"
+      path: "/pixlaacademy",
     },
   ];
 
@@ -97,12 +104,14 @@ export default function ProductsServices() {
       {/* Scrollable Cards */}
       <div
         ref={scrollRef}
-        className="flex gap-8 overflow-x-auto scrollbar-hide scroll-smooth pb-6"
+        className="flex gap-8 overflow-x-auto scrollbar-hide scroll-smooth pb-6 pr-0"
+        onMouseLeave={() => setIsPaused(false)} // 👈 Start scrolling when mouse leaves
+        onMouseEnter={() => setIsPaused(true)}  // 👈 Stop scrolling when mouse enters
       >
         {services.map((item, idx) => (
           <div
             key={idx}
-            className="flex-shrink-0 w-72 md:w-80  rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+            className="flex-shrink-0 w-72 md:w-80 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer"
           >
             {/* Icon */}
             <div className="p-5 flex justify-start">
@@ -128,7 +137,10 @@ export default function ProductsServices() {
               </p>
 
               <div className="mt-5">
-                <button className="bg-white text-black text-sm px-4 py-2 w-full flex justify-center items-center gap-2 hover:bg-gray-200 transition-all">
+                <button
+                  onClick={() => navigate(item.path)}
+                  className="bg-white text-black text-sm px-4 py-2 w-full flex justify-center items-center gap-2 hover:bg-gray-200 transition-all"
+                >
                   Explore <span className="text-black">↗</span>
                 </button>
               </div>
