@@ -1,21 +1,31 @@
 import React from "react";
 import { FaArrowLeft, FaStar } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // 👈 import this
 import pixla1 from "./../../../assets/pixla/p1.png";
- 
+
 const HeroSection = () => {
+  const navigate = useNavigate(); // 👈 create navigate instance
+
+  const handleBack = () => {
+    navigate("/"); // 👈 navigate to home page
+  };
+
   return (
     <section
-      className="relative w-full h-screen flex items-center justify-center text-white bg-cover bg-center  px-6 md:px-24  py-16"
+      className="relative w-full h-screen flex items-center justify-center text-white bg-cover bg-center px-6 md:px-24 py-16"
       style={{ backgroundImage: `url(${pixla1})` }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black bg-opacity-70"></div>
- 
+
       {/* Left arrow */}
-      <button className="absolute top-8 left-8 bg-white text-black p-2 rounded">
+      <button
+        onClick={handleBack}
+        className="absolute top-8 left-8 bg-white text-black p-2 rounded hover:bg-gray-200 transition cursor-pointer"
+      >
         <FaArrowLeft size={20} />
       </button>
- 
+
       {/* Content */}
       <div className="relative z-10 text-center max-w-2xl px-4">
         <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4">
@@ -26,7 +36,7 @@ const HeroSection = () => {
           and rewards, empowering creators, brands, and users to engage and grow
           together.
         </p>
- 
+
         {/* Store buttons */}
         <div className="flex justify-center gap-4 mb-6">
           <button className="bg-black flex items-center gap-2 px-4 py-2 rounded">
@@ -44,7 +54,7 @@ const HeroSection = () => {
             />
           </button>
         </div>
- 
+
         {/* Rating */}
         <div className="text-center">
           <div className="flex justify-center items-center gap-2 text-2xl font-semibold">
@@ -63,5 +73,5 @@ const HeroSection = () => {
     </section>
   );
 };
- 
+
 export default HeroSection;

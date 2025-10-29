@@ -55,7 +55,7 @@ function App() {
       <ScrollToTop />
 
       {/* Main container with max width */}
-      <div className="w-full max-w-[1440px] mx-auto">
+      <div className="w-full max-w-[1800px] mx-auto">
         <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
