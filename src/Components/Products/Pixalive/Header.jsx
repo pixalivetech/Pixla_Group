@@ -1,38 +1,46 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaStar } from "react-icons/fa";
-import pixla1 from "./../../../assets/Pixla/p1.png";
-
+import videoBg from "./../../../assets/Pixalive/v3.mp4"; // 👈 use your video file
+ 
 const HeroSection = () => {
-  const navigate = useNavigate(); // ✅ React Router hook for navigation
-
+  const navigate = useNavigate();
+ 
   return (
-    <section
-      className="relative w-full h-screen flex items-center justify-center text-white bg-cover bg-center"
-      style={{ backgroundImage: `url(${pixla1})` }}
-    >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-70"></div>
-
-      {/* Back Arrow — goes to "/" when clicked */}
+    <section className="relative w-full h-screen flex items-center justify-center text-white overflow-hidden">
+      {/* 🔹 Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={videoBg} type="video/mp4" />
+      </video>
+ 
+      {/* 🔹 Light Black Overlay */}
+      <div className="absolute inset-0  bg-opacity-60"></div>
+ 
+      {/* 🔹 Back Arrow */}
       <button
         onClick={() => navigate("/")}
-        className="absolute top-6 left-6 bg-white text-black p-2 rounded-full shadow-md hover:opacity-80 transition cursor-pointer"
+        className="absolute top-6 left-6 bg-white text-black p-2 rounded-full shadow-md hover:opacity-80 transition cursor-pointer z-10"
       >
         <FaArrowLeft size={20} />
       </button>
-
-      {/* Center Content */}
+ 
+      {/* 🔹 Center Content */}
       <div className="relative z-10 text-center px-6 max-w-3xl">
         <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-4">
           PIXALIVE LIVE STREAMING PLATFORM
         </h1>
         <p className="text-base md:text-lg mb-6 text-gray-200">
-          Pixalive is a live streaming platform that drives real-time engagement, commerce,
-          and rewards for brands, creators, and audiences
+          Pixalive is a live streaming platform that drives real-time engagement,
+          commerce, and rewards for brands, creators, and audiences.
         </p>
-
-        {/* Store Buttons */}
+ 
+        {/* App Store Buttons */}
         <div className="flex justify-center gap-4 mb-6">
           <a
             href="#"
@@ -55,7 +63,7 @@ const HeroSection = () => {
             />
           </a>
         </div>
-
+ 
         {/* Rating Section */}
         <div className="flex flex-col items-center space-y-1">
           <div className="flex items-center text-3xl font-semibold">
@@ -74,5 +82,6 @@ const HeroSection = () => {
     </section>
   );
 };
-
+ 
 export default HeroSection;
+ 

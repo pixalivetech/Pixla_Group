@@ -2,8 +2,8 @@ import React from "react";
 
 export default function PrivacyPolicy() {
   return (
-    <main className="min-h-screen bg-[#f6f6f6] px-6 py-16 md:px-24 text-black">
-      <div className="mx-auto bg-[#f6f6f6]">
+    <main className="min-h-screen bg-[#f2f2f2] px-6 py-16 md:px-24 text-black">
+      <div className="mx-auto bg-[#f2f2f2]">
         
         {/* Header */}
         <header className="pb-6 mb-6 border-black">
