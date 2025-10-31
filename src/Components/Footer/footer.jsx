@@ -175,7 +175,7 @@ export default function Footer() {
                   to="/investors"
                   className="text-white hover:text-gray-200 cursor-pointer transition duration-150 font-semibold"
                 >
-                  Investors & Partners
+                  Investor & Partners
                 </Link>
               </li>
               <li>
