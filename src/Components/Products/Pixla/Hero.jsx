@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 
 // ✅ Replace with your actual image imports
-import phone from "./../../../assets/pixla/phone.png";
+import phone from "./../../../assets/pixla/phone copy.png";
 import likeIcon from "./../../../assets/Pixla/like.png";
 import shareIcon from "./../../../assets/Pixla/share.png";
 import uploadIcon from "./../../../assets/Pixla/upload.png";
@@ -61,7 +61,7 @@ const PixlaShowcase = () => {
         <img
           src={phone}
           alt="Pixla App"
-          className="w-[200px] sm:w-[260px] md:w-[340px] lg:w-[360px] transform rotate-12 drop-shadow-2xl hover:rotate-6 transition-transform duration-700"
+          className="w-[300px] sm:w-[260px] md:w-[340px] lg:w-[360px] transform rotate-12 drop-shadow-2xl hover:rotate-6 transition-transform duration-700"
         />
       </div>
 
