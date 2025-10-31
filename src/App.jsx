@@ -18,6 +18,8 @@ import Pixalive from "./Pages/Pixalive";
 import Pixlakart from "./Pages/Pixlakart";
 import PixlaAcademy from "./Pages/Pixlaacademy";
 import Pixclick from "./Pages/Pixclick";
+import TermsAndConditions from "./Components/Terms/Termsconditions";
+import Privacy from "./Components/Terms/Privacy";
 
 // ------------------
 // Layout Component
@@ -69,6 +71,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/fmcg" element={<FmcgPage />} />
             <Route path="/it-services" element={<Itservice />} />
+             <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+             <Route path="/privacy-policy" element={<Privacy />} />
           </Routes>
         </Layout>
       </div>

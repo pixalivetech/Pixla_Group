@@ -6,14 +6,12 @@ export default function Footer() {
   const [openDivisions, setOpenDivisions] = useState(false);
   const divisionsRef = useRef(null);
 
-  // Division links with proper routes
   const divisionsLinks = [
     { name: "Retail", path: "/retail" },
     { name: "FMCG", path: "/fmcg" },
     { name: "IT Services", path: "/it-services" },
   ];
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (divisionsRef.current && !divisionsRef.current.contains(event.target)) {
@@ -72,27 +70,25 @@ export default function Footer() {
         <hr className="border-gray-800 my-8" />
 
         {/* Email CTA */}
-       <div className="flex justify-center md:justify-end mb-6 mt-6 px-4">
-  <h2
-    className="
-      text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-4xl 
-      font-semibold 
-      flex items-center gap-2 
-      cursor-pointer 
-      hover:text-gray-300 
-      transition duration-150 
-      whitespace-nowrap
-    "
-  >
-    HELLO@PIXLAGROUP.COM
-    <ArrowUpRight
-      className="text-white"
-      style={{ width: "clamp(20px, 3vw, 38px)", height: "clamp(20px, 3vw, 38px)" }}
-    />
-  </h2>
-</div>
-
-
+        <div className="flex justify-center md:justify-end mb-6 mt-6 px-4">
+          <h2
+            className="
+              text-lg sm:text-xl md:text-2xl lg:text-4xl xl:text-4xl 
+              font-semibold 
+              flex items-center gap-2 
+              cursor-pointer 
+              hover:text-gray-300 
+              transition duration-150 
+              whitespace-nowrap
+            "
+          >
+            HELLO@PIXLAGROUP.COM
+            <ArrowUpRight
+              className="text-white"
+              style={{ width: "clamp(20px, 3vw, 38px)", height: "clamp(20px, 3vw, 38px)" }}
+            />
+          </h2>
+        </div>
 
         {/* Footer Columns */}
         <div className="flex flex-col md:flex-row justify-start md:justify-end text-sm leading-relaxed gap-10 md:gap-12 lg:gap-14">
@@ -117,7 +113,7 @@ export default function Footer() {
                 href="mailto:contact@pixalivenetwork.com"
                 className="text-gray-400 hover:text-gray-200 transition duration-150"
               >
-                contact@pixalivenetwork.com
+                 info@pixlagroup.com
               </a>
             </p>
           </div>
@@ -133,7 +129,6 @@ export default function Footer() {
                   Divisions ▾
                 </button>
 
-                {/* Dropdown menu */}
                 <ul
                   className={`absolute left-0 mt-2 bg-black border border-gray-800 rounded-md overflow-hidden transition-all duration-300 z-10 ${
                     openDivisions ? "max-h-60 opacity-100" : "max-h-0 opacity-0 pointer-events-none"
@@ -153,7 +148,6 @@ export default function Footer() {
                 </ul>
               </li>
 
-              {/* About & Careers */}
               <li>
                 <Link
                   to="/about"
@@ -164,7 +158,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  to="/"
+                  to="/careers"
                   className="text-white hover:text-gray-200 cursor-pointer transition duration-150 font-semibold"
                 >
                   Careers
@@ -178,7 +172,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  to="/"
+                  to="/investors"
                   className="text-white hover:text-gray-200 cursor-pointer transition duration-150 font-semibold"
                 >
                   Investors & Partners
@@ -196,12 +190,24 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center mt-16 pt-6 text-[13px] text-gray-500 border-t border-gray-800">
-          <p className="order-2 md:order-1 mt-3 md:mt-0">
+        {/* Bottom Section with Added Links */}
+        <div className="flex flex-col md:flex-row justify-between items-center mt-16 pt-6 text-[13px] text-gray-500 border-t border-gray-800 gap-3">
+          <p className="order-3 md:order-1">
             @ALL RIGHTS RESERVED, INSPIRUX 2025
           </p>
-          <p className="flex items-center gap-1 order-1 md:order-2">
+
+          {/* Added Policies */}
+          <div className="flex items-center gap-4 order-1 md:order-2">
+            <Link to="/terms-and-conditions" className="hover:text-gray-300">
+              Terms & Conditions
+            </Link>
+            <span>|</span>
+            <Link to="/privacy-policy" className="hover:text-gray-300">
+              Privacy Policy
+            </Link>
+          </div>
+
+          <p className="flex items-center gap-1 order-2 md:order-3">
             LET’S MAKE YOUR IDEAS TO LIFE <span className="text-red-500">❤</span>
           </p>
         </div>
