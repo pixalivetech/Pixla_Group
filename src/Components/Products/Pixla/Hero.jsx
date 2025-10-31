@@ -61,7 +61,7 @@ const PixlaShowcase = () => {
         <img
           src={phone}
           alt="Pixla App"
-          className="w-[200px] sm:w-[260px] md:w-[340px] lg:w-[360px] transform rotate-12 drop-shadow-2xl hover:rotate-6 transition-transform duration-700"
+          className="w-[400px] sm:w-[260px] md:w-[440px] lg:w-[460px] transform rotate-12 drop-shadow-2xl hover:rotate-6 transition-transform duration-700"
         />
       </div>
 

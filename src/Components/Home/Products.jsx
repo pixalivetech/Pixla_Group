@@ -62,22 +62,7 @@ export default function ProductsServices() {
       img: Card2,
       path: "/pixalive",
     },
-    {
-      icon: AffiliateIcon,
-      title: "Pixclick (Affiliate Market)",
-      description:
-        "Affiliate marketing made simple – enabling businesses and individuals to earn through smart referrals.",
-      img: Card3,
-      path: "/pixclick",
-    },
-    {
-      icon: EcommerceIcon,
-      title: "Pixlakart (E-commerce)",
-      description:
-        "A next-generation e-commerce platform designed to simplify online shopping and empower sellers.",
-      img: Card4,
-      path: "/pixlakart",
-    },
+   
     {
       icon: AcademyIcon,
       title: "Pixla Academy",

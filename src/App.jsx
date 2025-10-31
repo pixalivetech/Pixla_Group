@@ -65,9 +65,9 @@ function App() {
             <Route path="/retail" element={<Retail />} />
             <Route path="/pixla" element={<Pixla />} />
             <Route path="/pixalive" element={<Pixalive />} />
-            <Route path="/pixlakart" element={<Pixlakart />} />
+            {/* <Route path="/pixlakart" element={<Pixlakart />} /> */}
             <Route path="/pixlaacademy" element={<PixlaAcademy />} />
-            <Route path="/pixclick" element={<Pixclick />} />
+            {/* <Route path="/pixclick" element={<Pixclick />} /> */}
             <Route path="/contact" element={<Contact />} />
             <Route path="/fmcg" element={<FmcgPage />} />
             <Route path="/it-services" element={<Itservice />} />
