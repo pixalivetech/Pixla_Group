@@ -16,9 +16,8 @@ export default function OurDivisions() {
         "Pixla’s Retail Media Network helps brands connect with customers through data-driven advertising, in-store activations, and digital strategies—boosting visibility, personalization, and growth.",
       tags: [
         { name: "Pixla", desc: "Short Video" },
-        { name: "Pixalive", desc: "Live Streaming" },
-        { name: "Pixclick", desc: "Affiliate Marketing" },
-        { name: "Pixlakart", desc: "E-commerce" },
+       
+        
       ],
       img: Div1,
       link: "/retail", // same-tab navigation
@@ -29,10 +28,7 @@ export default function OurDivisions() {
       description:
         "We create and market a diverse range of consumer products that combine innovation and quality to meet everyday needs and inspire customer loyalty.",
       tags: [
-        { name: "PixTaste", desc: "Food & Beverage" },
-        { name: "PixGlow", desc: "Personal Care" },
-        { name: "PixHome", desc: "Home Essentials" },
-        { name: "PixKart", desc: "Ecommerce" },
+       
       ],
       img: Div2,
       link: "/fmcg",
@@ -43,10 +39,7 @@ export default function OurDivisions() {
       description:
         "Providing cutting-edge IT services, tech upskilling programs, and freelancing opportunities for professionals to grow and innovate globally.",
       tags: [
-        { name: "PixTech", desc: "Software Development" },
-        { name: "PixTrain", desc: "Corporate Training" },
-        { name: "PixHire", desc: "Freelance Network" },
-        { name: "PixAlive", desc: "IT Service" },
+     
       ],
       img: Div3,
       link: "/it-services",
