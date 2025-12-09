@@ -28,8 +28,8 @@ export default function KeyInitiatives() {
 
   return (
     <section className="bg-[#f2f2f2] py-16 px-6 md:px-24 md:py-24 font-sans">
-      {/* Header - MODIFIED for Mobile Center */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap- mb-12 items-center text-center">
+      {/* Header */}
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12 items-center text-center">
         <h4 className="text-gray-500 text-sm md:text-lg inline-block border-b-2 border-gray-200 font-medium mb-1 cursor-pointer">
           Our Academy Program
         </h4>
@@ -40,8 +40,7 @@ export default function KeyInitiatives() {
 
       {/* Content Section */}
       <div className="flex flex-col md:flex-row gap-15">
-        
-        {/* Left Image - MODIFIED for Mobile Center */}
+        {/* Left Image */}
         <div className="md:w-1/3 flex justify-center md:justify-start mb-8 md:mb-0">
           <img
             src={DivisionImage}
@@ -59,19 +58,40 @@ export default function KeyInitiatives() {
                 idx % 2 === 0 ? "md:border-r-2 border-gray-300" : ""
               }`}
             >
-              {/* ✅ Title with <br> tag support */}
               <h5
                 className="text-gray-400 text-md mb-2 font-semibold"
                 dangerouslySetInnerHTML={{ __html: item.title }}
               ></h5>
-
-              {/* Description */}
               <p className="text-gray-800 text-md leading-relaxed">
                 {item.description}
               </p>
             </div>
           ))}
         </div>
+      </div>
+
+      {/* 🚀 Career Opportunities Section (Black Center) */}
+      <div className="mt-24 bg-black text-white text-center py-16 px-6 rounded-2xl shadow-lg">
+        <h3 className="text-2xl md:text-3xl font-semibold mb-4">
+          Career Opportunities – Learn & Work with Pixla Group
+        </h3>
+        <p className="text-gray-300 max-w-2xl mx-auto mb-6 leading-relaxed">
+          At Pixla Group, we believe in nurturing talent from the ground up.
+          Through our Pixla Academy Program, we train and hire passionate
+          individuals across technology, marketing, design, and operations.
+        </p>
+        <p className="text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
+          If you’re eager to learn, grow, and build your career with one of
+          India’s fastest-growing digital ecosystems — your journey starts here.
+        </p>
+        <a
+          href="https://pixlaacademy.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-200 transition"
+        >
+          Visit Website
+        </a>
       </div>
     </section>
   );

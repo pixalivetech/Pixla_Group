@@ -33,12 +33,11 @@ export default function WhoWeAreSection() {
           {/* CENTER COLUMN */}
           <div className="flex-1 px-8">
             <p className="text-xl leading-relaxed max-w-xl mx-auto text-left">
-              Pixla Group is built on a vision to integrate <br />
-              media, consumer products, and technology <br />
-              services into a connected ecosystem. With <br />
-              divisions rapidly growing, we empower <br />
-              brands, professionals, and consumers to <br />
-              succeed together.
+              Pixla Group is a forward-thinking business collective bringing together diverse industries under one roof.
+We operate in Social Media, FMCG, Jewellery, IT Services, Training, and Research & Development, each contributing to a shared purpose — driving growth through innovation and integrity.<br/>
+
+Our strength lies in combining creativity with technology to deliver meaningful impact.
+At Pixla Group, we’re not just building businesses — we’re building opportunities for the future..
             </p>
 
             <div className="mt-10 flex items-center justify-center gap-6">

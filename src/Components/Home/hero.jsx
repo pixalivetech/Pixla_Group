@@ -46,10 +46,10 @@ function formatAnimatedValue(numericValue, originalLabel) {
 
 const DivisionsSection = () => {
   const stats = [
-    { id: 1, label: "1.2k", target: 1200, caption: "Projects Completed" },
+    { id: 1, label: "50+", target: 1200, caption: "Projects Completed" },
     { id: 2, label: "8+", target: 8, caption: "Years of Experience" },
     { id: 3, label: "99+", target: 99, caption: "Trusted Companies" },
-    { id: 4, label: "1.3k", target: 1300, caption: "Happy Clients" },
+    { id: 4, label: "2k", target: 1300, caption: "Happy Clients" },
   ];
 
   const animatedValues = stats.map((s) => useCountUp(s.target, 1600));
@@ -78,8 +78,8 @@ const DivisionsSection = () => {
           </div>
 
           <p className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed px-2">
-            Pixla Group drives impact across industries from Retail Media and FMCG to IT
-            Services. With innovation, technology, and trust, we are building the future.
+            Pixla Group works across Social Media, FMCG, Jewellery, IT Services, Training, and R&D.
+With innovation, technology, and trust, we are building a better future.
           </p>
         </div>
 

@@ -1,28 +1,57 @@
 // src/components/KeyInitiatives.jsx
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import DivisionImage from "./../../assets/Home/key.png"; // Replace with your image path
 
 export default function KeyInitiatives() {
+  const [contentHeight, setContentHeight] = useState(0);
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setContentHeight(contentRef.current.offsetHeight);
+    }
+
+    // Recalculate height on window resize
+    const handleResize = () => {
+      if (contentRef.current) {
+        setContentHeight(contentRef.current.offsetHeight);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const initiatives = [
     {
-      title: "Seed Ball Campaign & Tree <br> Plantation",
+      title: "Digital Empowerment",
       description:
-        "Promoting a greener future through seed ball and sapling initiatives.",
+        "Through Pixla (Short Video Platform) and our digital services, we help individuals and businesses grow online, connect with audiences, and embrace digital opportunities.",
     },
     {
-      title: "Women Empowerment <br> Drives",
+      title: "Financial Inclusion",
       description:
-        "Encouraging skill development and entrepreneurship among women.",
+        "With Pixla Gold, users can save and invest in digital gold, with flexible plans and the option to convert it into jewellery — making gold saving simple and secure for everyone.",
     },
     {
-      title: "Digital Literacy <br> Programs",
+      title: "Skill Development & Employment",
       description:
-        "Bridging the digital divide by training students and communities.",
+        "Pixla Academy helps learners build real-world skills through practical training and internships, preparing them for successful careers.",
     },
     {
-      title: "Environmental Awareness",
+      title: "Consumer Innovation",
       description:
-        "Spreading awareness about sustainability and climate responsibility.",
+        "Pixla Brands brings trusted products across fashion, cosmetics, grocery, and wellness, offering quality and value for modern consumers.",
+    },
+    {
+      title: "Technology Transformation",
+      description:
+        "Pixla Technology Services delivers IT solutions and digital platforms that help businesses grow, innovate, and adapt to the future.",
+    },
+    {
+      title: "Environmental Initiatives",
+      description:
+        "Through our Seed Ball Campaign and Tree Plantation drives, Pixla Group promotes sustainability, spreading awareness about climate responsibility and working towards a greener tomorrow.",
     },
   ];
 
@@ -34,24 +63,32 @@ export default function KeyInitiatives() {
           Our Key Initiatives
         </h4>
         <p className="text-black font-semibold text-lg md:text-2xl max-w-2xl text-left md:text-left">
-          Our divisions deliver specialized solutions to drive innovation,
-          engagement, and growth.
+          Pixla Group is committed to creating meaningful change through
+          innovation, technology, and social impact. Each of our initiatives
+          focuses on empowering people, supporting communities, and building a
+          better and more sustainable future.
         </p>
       </div>
 
       {/* Content Section */}
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row items-start md:items-stretch">
         {/* Left Image */}
-        <div className="md:w-1/3 ml-20">
+        <div
+          className="md:w-1/3 flex justify-center md:justify-start"
+          style={{ height: contentHeight ? `${contentHeight}px` : "auto" }}
+        >
           <img
             src={DivisionImage}
-            alt="Division"
-            className="w-50 h-55 object-cover"
+            alt="Key Initiatives Illustration"
+            className="w-full h-full object-cover rounded-lg shadow-md"
           />
         </div>
 
         {/* Right Grid */}
-        <div className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-15 gap-y-30">
+        <div
+          ref={contentRef}
+          className="md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-12 pl-0 md:pl-10"
+        >
           {initiatives.map((item, idx) => (
             <div
               key={idx}
@@ -59,13 +96,9 @@ export default function KeyInitiatives() {
                 idx % 2 === 0 ? "md:border-r-2 border-gray-300" : ""
               }`}
             >
-              {/* ✅ Title with <br> tag support */}
-              <h5
-                className="text-gray-400 text-md mb-2 font-semibold"
-                dangerouslySetInnerHTML={{ __html: item.title }}
-              ></h5>
-
-              {/* Description */}
+              <h5 className="text-gray-700 text-lg mb-2 font-semibold">
+                {item.title}
+              </h5>
               <p className="text-gray-800 text-md leading-relaxed">
                 {item.description}
               </p>

@@ -37,37 +37,23 @@ export default function InvestorsAndPartners() {
           {/* Right: Text content */}
           <div className="lg:w-1/2 text-gray-700">
             <p className="text-lg leading-relaxed mb-8 max-w-xl">
-              Pixla Group is committed to building a strong ecosystem of growth, innovation,
-              and collaboration. We invite investors, franchise partners, and collaborators to
-              explore exciting opportunities across our divisions and products.
+             At Pixla Group, we believe in growing together. We invite visionary investors and strategic partners to join us in shaping India’s first integrated digital and consumer ecosystem.
+
+By collaborating with Pixla Group, you become part of a dynamic journey that blends technology, sustainability, innovation, and social impact. Together, we can build businesses that not only thrive but also make a difference in people’s lives.
+
+Let’s create the future—together.
+
+👉 Partner with Pixla Group. Invest in tomorrow.   
             </p>
 
-            <h2 className="text-3xl md:text-4xl font-semibold mb-9 text-black">
-              #Business Opportunities
-            </h2>
-
-            <ul className="space-y-4 text-lg max-w-md text-black">
-              <li className="flex items-start gap-3">
-                <span className="flex-none text-2xl font-extrabold">•</span>
-                <span className="font-semibold" >Retail Media Network</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="flex-none text-2xl font-extrabold">•</span>
-                <span className="font-semibold">FMCG / Pixla Consumer Products</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="flex-none text-2xl font-extrabold">•</span>
-                <span className="font-semibold">IT Services – Technology solutions</span>
-              </li>
-            </ul>
-
+          
             <div className="mt-10">
-              <Link to ="/about">
+              <Link to ="/contact">
               <button
                 type="button"
                 className="inline-block py-3 px-10 bg-black text-white text-lg font-semibold hover:bg-gray-800 transition"
               >
-                Explore
+                Contact us
               </button>
               </Link>
             </div>

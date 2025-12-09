@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+
 /* Replace these with your actual images */
 import Thumb1 from "./../../assets/Home/thumb1.png";
 import Thumb2 from "./../../assets/Home/thumb2.png";
@@ -6,70 +8,100 @@ import Thumb3 from "./../../assets/Home/thumb3.png";
 import Thumb4 from "./../../assets/Home/thumb4.png";
 import Thumb5 from "./../../assets/Home/thumb5.png";
 
-const initialReviews = [
-  { id: 1, name: "ANDYLAM", text: "Allows you to collaborate, experiment, and test much more effectively and efficiently.", count: "43.9K reviews", img: Thumb1 },
-  { id: 2, name: "DAVID", text: "Amazing user experience and performance.", count: "21.4K reviews", img: Thumb2 },
-  { id: 3, name: "MARK", text: "Helps teams connect seamlessly across projects.", count: "18.2K reviews", img: Thumb3 },
-  { id: 4, name: "JAMES", text: "Clean design and super intuitive interface.", count: "32.7K reviews", img: Thumb4 },
-  { id: 5, name: "EMMA", text: "Reliable, efficient, and a joy to use every day.", count: "27.1K reviews", img: Thumb5 },
+const reviews = [
+  {
+    img: Thumb1,
+    text: "Pixla Group is redefining what it means to connect, learn, and grow in the digital world. Every division reflects innovation and passion.",
+    name: "Karthik R.",
+    role: "Entrepreneur",
+  },
+  {
+    img: Thumb2,
+    text: "I joined through the Pixla Academy program, and it changed my career path completely. The training and mentorship were top-notch!",
+    name: "Divya S.",
+    role: "Software Engineer",
+  },
+  {
+    img: Thumb3,
+    text: "Pixla Brands offers amazing FMCG products — high quality, affordable, and proudly made in India.",
+    name: "Nithya M.",
+    role: "Retail Partner",
+  },
+  {
+    img: Thumb4,
+    text: "Saving gold with Pixla Gold is simple and transparent. I love that I can convert my savings into jewellery anytime.",
+    name: "Vivek A.",
+    role: "Pixla Gold Customer",
+  },
+  {
+    img: Thumb5,
+    text: "Pixla Group’s vision to integrate social, tech, and commerce under one ecosystem is truly inspiring. A company built for the future.",
+    name: "Harini P.",
+    role: "Digital Strategist",
+  },
 ];
 
 export default function ReviewsSection() {
-  const [order, setOrder] = useState(initialReviews);
+  const [current, setCurrent] = useState(0);
 
-  const rotateToSecond = (clickedId) => {
-    let newOrder = [...order];
-    const clickedIndex = newOrder.findIndex((r) => r.id === clickedId);
-    if (clickedIndex === 1) return;
-    while (newOrder[1].id !== clickedId) {
-      newOrder.unshift(newOrder.pop());
-    }
-    setOrder(newOrder);
-  };
+  // Auto-slide every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % reviews.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="bg-[#f2f2f2] py-16 px-4 md:px-24 font-sans overflow-hidden">
-      <h4 className="text-gray-500 text-sm md:text-lg inline-block border-b-2 border-gray-200 font-medium mb-8 cursor-pointer">
-        Reviews
-      </h4>
+      {/* Section Header */}
+      <div className="text-center mb-12">
+        <h2 className="text-2xl md:text-4xl font-bold text-gray-900 mb-2">
+          What People Say About Pixla Group
+        </h2>
+        <p className="text-gray-600 max-w-2xl mx-auto">
+          Real voices. Real experiences. See how Pixla Group is creating impact
+          across industries.
+        </p>
+      </div>
 
-      <div className="flex flex-wrap justify-center items-end gap-6 relative transition-all duration-700 ease-in-out">
-        {order.map((review, index) => {
-          const isActive = index === 1;
+      {/* Slider */}
+      <div className="relative w-full flex justify-center items-center">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={current}
+            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -50, scale: 0.95 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
+            className="bg-white rounded-2xl shadow-lg p-8 max-w-xl mx-auto text-center"
+          >
+            <img
+              src={reviews[current].img}
+              alt={reviews[current].name}
+              className="w-24 h-24 rounded-full object-cover mx-auto mb-4 shadow-md"
+            />
+            <p className="text-yellow-500 text-lg mb-2">⭐⭐⭐⭐⭐</p>
+            <p className="text-gray-700 italic mb-4">"{reviews[current].text}"</p>
+            <h3 className="font-bold text-gray-900 text-lg">
+              — {reviews[current].name}
+            </h3>
+            <p className="text-gray-500 text-sm">{reviews[current].role}</p>
+          </motion.div>
+        </AnimatePresence>
 
-          return (
-            <div
-              key={review.id}
-              className={`relative flex flex-col md:flex-row items-center md:items-start transition-all duration-700 ease-in-out cursor-pointer group`}
-              onClick={() => rotateToSecond(review.id)}
-            >
-              {/* Image */}
-              <div
-                className={`relative overflow-hidden shadow-md transition-all duration-700 ease-in-out transform ${
-                  isActive
-                    ? "w-[220px] h-[400px] md:z-20 scale-105 md:group-hover:-translate-y-[30px]"
-                    : "w-[150px] h-[150px] md:w-[180px] md:h-[195px] z-10 scale-100"
-                }`}
-              >
-                <img
-                  src={review.img}
-                  alt={review.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Review Box */}
-              {isActive && (
-                <div className="mt-4 md:mt-0 md:absolute md:left-full md:bottom-60 md:ml-1 bg-[#f2f2f2] p-6 w-[90%] max-w-[350px] md:w-[350px] rounded-md  transition-all duration-700 opacity-100 text-center md:text-left">
-                  <h3 className="text-xl font-semibold text-gray-800">#{review.id}</h3>
-                  <h2 className="text-2xl font-bold text-gray-900 mt-1">{review.name}</h2>
-                  <p className="text-sm mt-3 text-gray-600">{review.text}</p>
-                  <p className="text-sm mt-4 text-gray-500">{review.count}</p>
-                </div>
-              )}
-            </div>
-          );
-        })}
+        {/* Dots navigation */}
+        <div className="flex justify-center mt-8 space-x-2 absolute bottom-0 translate-y-10">
+          {reviews.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrent(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                current === index ? "bg-gray-800 w-6" : "bg-gray-400"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

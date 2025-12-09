@@ -11,23 +11,29 @@ export default function OurDivisions() {
   const divisions = [
     {
       id: "01",
-      title: "Retail Media Network",
+      title: "Pixla (Short Video Platform)",
       description:
-        "Pixla’s Retail Media Network helps brands connect with customers through data-driven advertising, in-store activations, and digital strategies—boosting visibility, personalization, and growth.",
+        "A creative short video platform that connects people, encourages expression, and builds vibrant digital communities.",
       tags: [
+<<<<<<< Updated upstream
         { name: "Pixla", desc: "Short Video" },
         { name: "Pixalive", desc: "Live Streaming" },
         { name: "Pixclick", desc: "Affiliate Marketing" },
         { name: "Pixlakart", desc: "E-commerce" },
+=======
+       
+       
+        
+>>>>>>> Stashed changes
       ],
       img: Div1,
       link: "/retail", // same-tab navigation
     },
     {
       id: "02",
-      title: "FMCG / Pixla Consumer Products",
+      title: "Pixla Brands (FMCG Division)",
       description:
-        "We create and market a diverse range of consumer products that combine innovation and quality to meet everyday needs and inspire customer loyalty.",
+        "Our consumer products division that covers fashion, cosmetics, grocery, wellness, and more — offering quality, trust, and everyday convenience.",
       tags: [
         { name: "PixTaste", desc: "Food & Beverage" },
         { name: "PixGlow", desc: "Personal Care" },
@@ -39,7 +45,7 @@ export default function OurDivisions() {
     },
     {
       id: "03",
-      title: "IT Services – Technology solutions",
+      title: "Pixla Gold (Gold Division)",
       description:
         "Providing cutting-edge IT services, tech upskilling programs, and freelancing opportunities for professionals to grow and innovate globally.",
       tags: [
@@ -51,6 +57,43 @@ export default function OurDivisions() {
       img: Div3,
       link: "/it-services",
     },
+
+     {
+      id: "04",
+      title: " Pixla Technology Services (IT Services Division)",
+      description:
+        "Delivers modern technology solutions, product development, and digital transformation services that empower businesses to grow faster.",
+      tags: [
+     
+      ],
+      img: Div3,
+      link: "https://pixlatech.com",
+    },
+
+     {
+      id: "05",
+      title: " Pixla Academy (Training Division)",
+      description:
+        "Offers hands-on training, certification programs, and internships to help learners build strong professional careers.",
+      tags: [
+     
+      ],
+      img: Div3,
+      link: "https://www.pixlaacademy.com/",
+    },
+
+     {
+      id: "06",
+      title: "Pixla R&D (Research & Development Division)",
+      description:
+        "Focuses on innovation, product creation, and future technologies that drive progress across all Pixla businesses.",
+      tags: [
+     
+      ],
+      img: Div3,
+      link: "/it-services",
+    },
+    
   ];
 
   return (
@@ -62,8 +105,8 @@ export default function OurDivisions() {
             Our Divisions
           </p>
           <h2 className="text-[22px] md:text-[26px] font-semibold text-gray-800 leading-snug">
-            Our divisions deliver specialized solutions to drive innovation,
-            engagement, and growth
+           Pixla Group brings together multiple business divisions that work towards innovation, trust, and sustainable growth across industries.
+
           </h2>
         </div>
 
