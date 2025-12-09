@@ -10,19 +10,19 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_0cp6x3q", // Your Service ID
-        "template_ckgxssb", // Admin template
+       "service_lnjword",    // service ID
+        "template_2gbypv7",   // admin template ID
         form.current,
-        "rJ1Wh7Z8mtYIaH7vc" // Public key
+        "mOjbSAlY25mRszit8"   // public key
       )
       .then(() => {
         console.log("✅ Sent to Admin");
 
         return emailjs.sendForm(
-          "service_0cp6x3q",
-          "template_s5k2746", // User auto-reply template
-          form.current,
-          "rJ1Wh7Z8mtYIaH7vc"
+          "service_lnjword",    // service ID
+        "template_2gbypv7",   // admin template ID
+        form.current,
+        "mOjbSAlY25mRszit8"   // public key
         );
       })
       .then(() => {
